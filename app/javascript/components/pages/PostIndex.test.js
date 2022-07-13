@@ -14,9 +14,24 @@ import PostIndex from './PostIndex'
 Enzyme.configure({adapter: new Adapter()})
 
 describe("When PostIndex renders", () => {
+  const props ={
+    posts: [{
+      title:"string",
+      mood:"string",
+      body:"text"
+    }]
+  }
+  let postIndexRender
+  beforeEach(() => {
+    postIndexRender = shallow(<PostIndex {...props}/>)
+  })
     it("displays a heading", () => {
       const postIndexRender = shallow(<PostIndex />)
       const postIndexHeading = postIndexRender.find("h3").text()
-      expect(postIndexHeading).toEqual("PostIndex")
+      expect(postIndexHeading).toEqual("My Journal's")
     })
+    it("displays a card from reactstrap per post", () => {
+      const postIndexCard  = postIndexRender.find("Card")
+      expect(postIndexCard.length).toEqual(1)
+  })
   })
