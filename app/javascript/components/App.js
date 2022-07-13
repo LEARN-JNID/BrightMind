@@ -21,7 +21,13 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/postindex" component={PostIndex} />
           <Route path="/postnew" component={PostNew} />
-          <Route path="/postshow/:id" component={PostShow} />
+          <Route path="/postshow/:id" component={PostShow}
+            render={(props) => {
+            let id = props.match.params.id
+            let apartment = this.state.apartments.find(apartmentObject => apartmentObject.id == id)
+            return <ApartmentShow deleteApartment={this.deleteApartment} apartment={apartment} user_id={this.props.current_user.id}/>
+            }}
+            return  />
           <Route path="/postedit" component={PostEdit} />
         </Switch>
       <Footer />
