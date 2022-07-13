@@ -31,6 +31,7 @@ class App extends React.Component {
   }
 
   render () {
+    console.log(this.state.posts)
     const {current_user} = this.props
     return (
     <Router>
@@ -42,7 +43,13 @@ class App extends React.Component {
               return < PostIndex posts = { myPost } />
             }} />
           <Route path="/postnew" component={PostNew} />
-          <Route path="/postshow/:id" component={PostShow} />
+          <Route path="/postshow/:id"
+            render={(props) => {
+            let id = props.match.params.id
+            let post = this.state.posts.find(postObject => postObject.id == id)
+            return <PostShow logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+            }}
+             />
           <Route path="/postedit" component={PostEdit} />
         </Switch>
       <Footer />

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import {
   Card, 
   CardImg,
@@ -16,7 +17,8 @@ export default class PostIndex extends Component {
       <>
         <h3>My Journal's</h3>
         <div>
-          {posts && posts.map((value, index)=> {
+          {posts &&
+           posts.map((value, index)=> {
             return ( 
               <Card key={index}>
                 {/* <CardImg /> we'll come back to this */} 
@@ -25,9 +27,9 @@ export default class PostIndex extends Component {
                   <CardSubtitle>{value.mood}</CardSubtitle>
                   <CardText>{value.body}</CardText>
                 </CardBody>
-                <Button>
+                <NavLink to={`/postshow/${value.id}`}>
                   View Entry
-                </Button>
+              </NavLink>
               </Card>
               )
             })
