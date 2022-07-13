@@ -14,7 +14,7 @@ export default class PostIndex extends Component {
     const {posts} = this.props
     return (
       <>
-        <h3>My Journal</h3>
+        <h3>My Journal's</h3>
         <div>
           {posts && posts.map((value, index)=> {
             return ( 
