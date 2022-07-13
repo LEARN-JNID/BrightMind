@@ -17,6 +17,6 @@ describe("When PostEdit renders", () => {
     it("displays a heading", () => {
       const postEditRender = shallow(<PostEdit />)
       const postEditHeading = postEditRender.find("h3").text()
-      expect(postEditHeading).toEqual("div")
+      expect(postEditHeading).toEqual("PostEdit")
     })
   })

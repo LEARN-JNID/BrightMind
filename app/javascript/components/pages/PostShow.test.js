@@ -17,6 +17,6 @@ describe("When PostShow renders", () => {
     it("displays a heading", () => {
       const postShowRender = shallow(<PostShow />)
       const postShowHeading = postShowRender.find("h3").text()
-      expect(postShowHeading).toEqual("div")
+      expect(postShowHeading).toEqual("PostShow")
     })
   })

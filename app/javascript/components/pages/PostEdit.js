@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class PostEdit extends Component {
   render() {
     return (
-      <div>PostEdit</div>
+      <h3>PostEdit</h3>
     )
   }
 }

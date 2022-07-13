@@ -17,6 +17,6 @@ describe("When Header renders", () => {
     it("displays a heading", () => {
       const headerRender = shallow(<Header />)
       const headerHeading = headerRender.find("h3").text()
-      expect(headerHeading).toEqual("div")
+      expect(headerHeading).toEqual("Header")
     })
   })

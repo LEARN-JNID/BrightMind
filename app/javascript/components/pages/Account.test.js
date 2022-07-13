@@ -17,6 +17,6 @@ describe("When Account renders", () => {
     it("displays a heading", () => {
       const accountRender = shallow(<Account />)
       const accountHeading = accountRender.find("h3").text()
-      expect(accountHeading).toEqual("div")
+      expect(accountHeading).toEqual("Account")
     })
   })

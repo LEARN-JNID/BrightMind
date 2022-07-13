@@ -17,6 +17,6 @@ describe("When Home renders", () => {
     it("displays a heading", () => {
       const homeRender = shallow(<Home />)
       const homeHeading = homeRender.find("h3").text()
-      expect(homeHeading).toEqual("div")
+      expect(homeHeading).toEqual("Home")
     })
   })

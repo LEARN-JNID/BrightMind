@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class PostNew extends Component {
   render() {
     return (
-      <div>PostNew</div>
+      <h3>PostNew</h3>
     )
   }
 }

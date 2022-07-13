@@ -17,6 +17,6 @@ describe("When PostIndex renders", () => {
     it("displays a heading", () => {
       const postIndexRender = shallow(<PostIndex />)
       const postIndexHeading = postIndexRender.find("h3").text()
-      expect(postIndexHeading).toEqual("div")
+      expect(postIndexHeading).toEqual("PostIndex")
     })
   })

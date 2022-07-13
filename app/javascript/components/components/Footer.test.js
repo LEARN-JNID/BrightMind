@@ -17,6 +17,6 @@ describe("When Footer renders", () => {
     it("displays a heading", () => {
       const footerRender = shallow(<Footer />)
       const footerHeading = footerRender.find("h3").text()
-      expect(footerHeading).toEqual("div")
+      expect(footerHeading).toEqual("Footer")
     })
   })

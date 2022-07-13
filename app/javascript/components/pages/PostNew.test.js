@@ -17,6 +17,6 @@ describe("When PostNew renders", () => {
     it("displays a heading", () => {
       const postNewRender = shallow(<PostNew />)
       const postNewHeading = postNewRender.find("h3").text()
-      expect(postNewHeading).toEqual("div")
+      expect(postNewHeading).toEqual("PostNew")
     })
   })
