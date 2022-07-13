@@ -15,8 +15,15 @@ Enzyme.configure({adapter: new Adapter()})
 
 describe("When PostShow renders", () => {
     it("displays a heading", () => {
-      const postShowRender = shallow(<PostShow />)
-      const postShowHeading = postShowRender.find("h3").text()
-      expect(postShowHeading).toEqual("PostShow")
+      let logged_in = true
+      let post = {
+        title: "Title",
+        create_at: "Today",
+        mood: "mood",
+        body: "Description"
+      }
+      const postShowRender = shallow(<PostShow logged_in={logged_in} post={post} />)
+      const postShowHeading = postShowRender.find("div")
+      expect(postShowHeading.length).toEqual(1)
     })
   })
