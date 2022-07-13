@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem} from 'reactstrap';
+import {NavLink} from 'react-router-dom'
 
 export default class Header extends Component {
   constructor(props) {
@@ -36,36 +37,42 @@ export default class Header extends Component {
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <a href="/" className="nav-link">Home</a>
+                <NavLink to="/">
+                  Home
+                </NavLink>
               </NavItem>
+               <NavLink to="/">
+                  About Us
+               </NavLink>
+              { logged_in &&
               <NavItem>
-                <a href="/" className="nav-link">About Us</a>
-              </NavItem>
-              { logged_in&&
-                <NavItem>
-                <a href="/postindex" className="nav-link">My Journal</a>
+                <NavLink to="/postindex">
+                  My Journal
+                </NavLink>
               </NavItem>
               }
               { logged_in &&
               <NavItem>
-                <a href="/postnew" className="nav-link">Add New Entry</a>
+                <NavLink to="/postnew">
+                  Add New Entry
+                </NavLink>
               </NavItem>
               }
-              {logged_in &&
-                <NavItem>
-                  <a href={sign_out_route} className="nav-link">Sign Out</a>
-                </NavItem>
+              { logged_in &&
+              <NavItem>
+                <a href={sign_out_route}>Sign Out</a>
+              </NavItem>
               }
-              {!logged_in &&
-                <NavItem>
-                  <a href={sign_in_route} className="nav-link">Sign In</a>
-                </NavItem>
+              { !logged_in&&
+              <NavItem>
+                <a href={sign_in_route}>Sign In</a>
+              </NavItem>
               }
-              {!logged_in &&
-                <NavItem>
-                  <a href={new_user_route} className="nav-link">Sign Up</a>
-                </NavItem>
-              }
+              { !logged_in&&
+              <NavItem>
+                <a href={new_user_route}>Sign Up</a>
+              </NavItem>
+              }     
             </Nav>
           </Collapse>
         </Navbar>
