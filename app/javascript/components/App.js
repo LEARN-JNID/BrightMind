@@ -24,6 +24,7 @@ class App extends React.Component {
   componentDidMount() {
     this.readPost()
   }
+
   readPost = () => {
     fetch('/posts')
       .then(res => res.json())
@@ -31,9 +32,9 @@ class App extends React.Component {
       .catch(errors => console.log(errors))
   }
 
-  createPost = (post) => {
+  createPost = (newPost) => {
     fetch(`/posts`, {
-    body: JSON.stringify(post),
+    body: JSON.stringify(newPost),
     headers: {
       "Content-Type": "application/json"
     },
@@ -41,6 +42,19 @@ class App extends React.Component {
     })
     .then(response => response.json())
     .then(() => this.readPost())
+    .catch(errors => console.log("Post create errors:", errors))
+  }
+
+  editPost = (post, id) => {
+    fetch(`http://localhost:3000/posts/${id}`, {
+    body: JSON.stringify(post),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "PATCH"
+    })
+    .then(response => response.json())
+    .then(payload => this.readPost())
     .catch(errors => console.log("Post create errors:", errors))
   }
 
@@ -54,7 +68,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/postindex" render={() => {
               let myPost = this.state.posts.filter(post => post.user_id === current_user.id)
-              return < PostIndex posts = { myPost } />
+              return < PostIndex posts={ myPost } />
             }} />
           <Route path="/postnew" render={() => <PostNew createPost={this.createPost} />} />
           <Route path="/postshow/:id"
@@ -64,7 +78,13 @@ class App extends React.Component {
             return <PostShow logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
             }}
              />
-          <Route path="/postedit" component={PostEdit} />
+          <Route path="/postedit/:id"
+            render={(props) => {
+              let id = props.match.params.id
+              let post = this.state.posts.find(postObject => postObject.id == id)
+              return <PostEdit editPost={this.editPost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+              }}
+               />
         </Switch>
       <Footer />
     </Router>
