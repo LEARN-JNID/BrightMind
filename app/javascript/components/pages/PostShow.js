@@ -1,8 +1,24 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
 
 export default class PostShow extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        deleted: false
+    }
+  }
+
+  handleDelete = () => {
+        this.props.deletePost(this.props.post.id)
+        this.setState({deleted: true})
+    }
+
   render() {
+    if(this.state.deleted) {
+      return(<Redirect to="/postindex" />)
+    }
+
     return (
       <>
     {this.props.logged_in &&
@@ -15,9 +31,9 @@ export default class PostShow extends Component {
       <NavLink to={`/postedit/${this.props.post.id}`}>
           Edit Entry
       </NavLink>
-      <NavLink to={`/`}>
+      <button onClick={this.handleDelete}>
           Delete Entry
-      </NavLink>
+      </button>
       </div>
     }
       </>

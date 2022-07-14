@@ -32,6 +32,18 @@ class App extends React.Component {
       .catch(errors => console.log(errors))
   }
 
+  deletePost = (id) => {
+    fetch(`http://localhost:3000/posts/${id}`, {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(payload => this.readPost())
+    .catch(errors => console.log("delete errors:", errors))
+  }
+
   createPost = (newPost) => {
     fetch(`/posts`, {
     body: JSON.stringify(newPost),
@@ -75,7 +87,7 @@ class App extends React.Component {
             render={(props) => {
             let id = props.match.params.id
             let post = this.state.posts.find(postObject => postObject.id == id)
-            return <PostShow logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+            return <PostShow deletePost={this.deletePost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
             }}
              />
           <Route path="/postedit/:id"
