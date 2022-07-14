@@ -27,7 +27,13 @@ class PostsController < ApplicationController
   end
 
   def update
-
+    post = Post.find(params[:id])
+    if post.valid?
+        post.update(post_params)
+        render json: post
+    else
+        render json: post.errors, status: 422
+    end
   end
 
   def destroy
@@ -35,6 +41,9 @@ class PostsController < ApplicationController
   end
 
   private
+    def set_post
+      post = Post.find(params[:id])
+    end
 
     def post_params
       params.require(:post).permit(:title, :mood, :body)

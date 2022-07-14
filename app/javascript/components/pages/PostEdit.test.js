@@ -13,10 +13,18 @@ import PostEdit from './PostEdit'
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
 Enzyme.configure({adapter: new Adapter()})
 
-describe("When PostEdit renders", () => {
+describe("When PostNew renders", () => {
+  let postEditRender
+  beforeEach(() => {
+    postEditRender = shallow(<PostEdit />)
+  })
     it("displays a heading", () => {
       const postEditRender = shallow(<PostEdit />)
       const postEditHeading = postEditRender.find("h3").text()
       expect(postEditHeading).toEqual("PostEdit")
     })
+    it("creates a Edit entry", () => {
+      const postEditForm  = postEditRender.find("Form")
+      expect(postEditForm.length).toEqual(1)
+  })
   })
