@@ -30,6 +30,19 @@ class App extends React.Component {
       .catch(errors => console.log(errors))
   }
 
+  createPost = (post) => {
+    fetch(`/posts`, {
+    body: JSON.stringify(post),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "POST"
+    })
+    .then(response => response.json())
+    .then(() => this.readApartments())
+    .catch(errors => console.log("Post create errors:", errors))
+  }
+
   render () {
     console.log(this.state.posts)
     const {current_user} = this.props
@@ -42,7 +55,7 @@ class App extends React.Component {
               let myPost = this.state.posts.filter(post => post.user_id === current_user.id)
               return < PostIndex posts = { myPost } />
             }} />
-          <Route path="/postnew" component={PostNew} />
+          <Route path="/postnew" render={() => <PostNew createPost={this.createPost} />} />
           <Route path="/postshow/:id"
             render={(props) => {
             let id = props.match.params.id
