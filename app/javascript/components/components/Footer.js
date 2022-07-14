@@ -3,7 +3,8 @@ import {AiOutlineCopyrightCircle, AiFillGithub} from 'react-icons/ai'
 export default class Footer extends Component {
   render() {
     return (
-      <div id='footer-container'>
+      <div id='footer'>
+        <div id='footer-container'>
         <p id='footer-text'>
           <span>
           <AiOutlineCopyrightCircle id='footer-icons'/>
@@ -15,6 +16,7 @@ export default class Footer extends Component {
           <AiFillGithub id='footer-icons' />
           </a>
         </p>
+        </div>
       </div>
      
       
