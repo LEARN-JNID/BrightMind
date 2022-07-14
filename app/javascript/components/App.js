@@ -12,6 +12,7 @@ import PostShow from './pages/PostShow'
 import PostEdit from './pages/PostEdit'
 import Footer from './components/Footer'
 
+
 class App extends React.Component {
   constructor(props){
     super(props)
