@@ -39,7 +39,7 @@ class App extends React.Component {
     method: "POST"
     })
     .then(response => response.json())
-    .then(() => this.readApartments())
+    .then(() => this.readPost())
     .catch(errors => console.log("Post create errors:", errors))
   }
 

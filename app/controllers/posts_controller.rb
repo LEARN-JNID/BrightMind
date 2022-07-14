@@ -23,8 +23,8 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    user = User.find(current_user.id)
-    post = user.posts.create(post_params)
+    p "THIS IS CURRENT USER: #{current_user}"
+    post = current_user.posts.create(post_params)
     if post.valid?
       render json: post
     else
