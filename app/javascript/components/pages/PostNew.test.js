@@ -14,9 +14,17 @@ import PostNew from './PostNew'
 Enzyme.configure({adapter: new Adapter()})
 
 describe("When PostNew renders", () => {
+  let postNewRender
+  beforeEach(() => {
+    postNewRender = shallow(<PostNew />)
+  })
     it("displays a heading", () => {
       const postNewRender = shallow(<PostNew />)
       const postNewHeading = postNewRender.find("h3").text()
       expect(postNewHeading).toEqual("PostNew")
     })
+    it("creates a new entry", () => {
+      const postNewForm  = postNewRender.find("Form")
+      expect(postNewForm.length).toEqual(1)
+  })
   })
