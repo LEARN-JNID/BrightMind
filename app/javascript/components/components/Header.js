@@ -10,9 +10,21 @@ export default class Header extends Component {
     super(props);
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true
+      collapsed: true,
+      nav: false
     }
   }
+  
+listenScrollEvent = (e) => {
+if(window.scrollY >= 450){
+ this.setState({nav: true})
+}else {
+  this.setState({nav: false})
+}
+ }
+ componentDidMount() {
+  window.addEventListener('scroll', this.listenScrollEvent)
+}
 
   toggleNavbar() {
     this.setState({
@@ -35,17 +47,23 @@ export default class Header extends Component {
       <>
         
         <Navbar color="faded" light 
-        id='navbar-container'
+        sticky='top'
          className={this.state.collapsed ? 'navbar-container' : '#navbar-container active'}
+         id={this.state.nav ? 'nav-color' : 'navbar-container'}
         >
           <NavbarBrand href="/" className="mr-auto" >
-            <h3 id='bm-title'>Bright Mind</h3>
+            {/* <h3 id='bm-title'>Bright Mind</h3> */}
             </NavbarBrand>
           <div className="mr-2" onClick={this.toggleNavbar}>
           {this.state.collapsed ? <GiHamburgerMenu id='icons'/> : <AiOutlineCloseCircle id='icons'/>}
           </div>
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
+            <NavItem id='nav-links'>
+                <NavLink to="/" id='nav-link-text'>
+                    Home
+                </NavLink>
+               </NavItem>
               <NavItem id='nav-links'>
                 <NavLink to="/" id='nav-link-text'>
                     About Us
