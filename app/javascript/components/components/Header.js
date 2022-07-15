@@ -16,7 +16,7 @@ export default class Header extends Component {
   }
   
 listenScrollEvent = (e) => {
-if(window.scrollY >= 100){
+if(window.scrollY >= 450){
  this.setState({nav: true})
 }else {
   this.setState({nav: false})
@@ -59,6 +59,11 @@ if(window.scrollY >= 100){
           </div>
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
+            <NavItem id='nav-links'>
+                <NavLink to="/" id='nav-link-text'>
+                    Home
+                </NavLink>
+               </NavItem>
               <NavItem id='nav-links'>
                 <NavLink to="/" id='nav-link-text'>
                     About Us
