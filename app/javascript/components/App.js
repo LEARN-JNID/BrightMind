@@ -10,6 +10,7 @@ import PostIndex from './pages/PostIndex'
 import PostNew from './pages/PostNew'
 import PostShow from './pages/PostShow'
 import PostEdit from './pages/PostEdit'
+import AboutUs from './pages/AboutUs'
 import Footer from './components/Footer'
 
 
@@ -78,6 +79,7 @@ class App extends React.Component {
       <Header {...this.props} />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/aboutus" component={AboutUs} />
           <Route path="/postindex" render={() => {
               let myPost = this.state.posts.filter(post => post.user_id === current_user.id)
               return < PostIndex posts={ myPost } />
