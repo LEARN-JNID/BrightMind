@@ -8,15 +8,15 @@ import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
 // Imports in the component we are going to be testing.
-import Account from './Account'
+import Chart from './Chart'
 
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
 Enzyme.configure({adapter: new Adapter()})
 
-describe("When Account renders", () => {
+describe("When Footer renders", () => {
     it("displays a heading", () => {
-      const accountRender = shallow(<Account />)
-      const accountHeading = accountRender.find("h3").text()
-      expect(accountHeading).toEqual("Account")
+      const chartRender = shallow(<Chart />)
+      const chartDiv = chartRender.find("div")
+      expect(chartDiv.length).toEqual(1)
     })
   })
