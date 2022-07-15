@@ -13,7 +13,9 @@ export default class Header extends Component {
       collapsed: true
     }
   }
-
+handleClick = () => {
+  this.setState({collapsed: true})
+}
 
   toggleNavbar() {
     this.setState({
@@ -46,49 +48,49 @@ export default class Header extends Component {
           </div>
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
-            <NavItem id='nav-links'>
+            <NavItem id='nav-links' onClick={this.handleClick}>
                 <NavLink to="/" id='nav-link-text'>
                     Home
                 </NavLink>
                </NavItem>
-              <NavItem id='nav-links'>
+              <NavItem id='nav-links' onClick={this.handleClick}>
                 <NavLink to="/aboutus" id='nav-link-text'>
                     About Us
                 </NavLink>
                </NavItem>
               { logged_in &&
-              <NavItem id='nav-links'>
+              <NavItem id='nav-links' onClick={this.handleClick}>
                 <NavLink to="/myaccount" id='nav-link-text'>
                   My Account
                 </NavLink>
               </NavItem>
               }
               { logged_in &&
-              <NavItem id='nav-links'>
+              <NavItem id='nav-links' onClick={this.handleClick}>
                 <NavLink to="/postindex" id='nav-link-text'>
                   My Journal
                 </NavLink>
               </NavItem>
               }
               { logged_in &&
-              <NavItem id='nav-links'>
+              <NavItem id='nav-links' onClick={this.handleClick}>
                 <NavLink to="/postnew" id='nav-link-text'>
                   Add New Entry
                 </NavLink>
               </NavItem>
               }
               { logged_in &&
-              <NavItem id='nav-links'>
+              <NavItem id='nav-links' onClick={this.handleClick}>
                 <a href={sign_out_route} id='nav-link-text'>Sign Out</a>
               </NavItem>
               }
               { !logged_in&&
-              <NavItem id='nav-links'>
+              <NavItem id='nav-links' onClick={this.handleClick}>
                 <a href={sign_in_route} id='nav-link-text'>Sign In</a>
               </NavItem>
               }
               { !logged_in&&
-              <NavItem id='nav-links'>
+              <NavItem id='nav-links' onClick={this.handleClick}>
                 <a href={new_user_route} id='nav-link-text'>Sign Up</a>
               </NavItem>
               }     

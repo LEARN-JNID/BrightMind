@@ -16,20 +16,25 @@ export default class PostIndex extends Component {
     return (
       <>
         <h3>My Journal's</h3>
-        <div>
+        <div className='index-container'>
           {posts &&
            posts.map((currentPost, index)=> {
             return ( 
-              <Card key={index}>
+              <Card 
+              style={{ width: '20rem' }} 
+              key={index} 
+              id='index-cards'>
                 {/* <CardImg /> we'll come back to this */} 
                 <CardBody>
                   <CardTitle>{currentPost.title}</CardTitle>
                   <CardSubtitle>{currentPost.mood}</CardSubtitle>
                   <CardText>{currentPost.body}</CardText>
                 </CardBody>
-                <NavLink to={`/postshow/${currentPost.id}`}>
-                  View Entry
-              </NavLink>
+                <Button>
+                  <NavLink to={`/postshow/${currentPost.id}`}>
+                    View Entry
+                   </NavLink>
+              </Button>
               </Card>
               )
             })
