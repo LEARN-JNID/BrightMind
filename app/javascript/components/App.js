@@ -6,6 +6,7 @@ import {
   Switch
 } from 'react-router-dom'
 import Home from './pages/Home'
+import MyAccount from './pages/MyAccount'
 import PostIndex from './pages/PostIndex'
 import PostNew from './pages/PostNew'
 import PostShow from './pages/PostShow'
@@ -80,6 +81,10 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/aboutus" component={AboutUs} />
+          <Route path="/myaccount" render={() => {
+              let myPost = this.state.posts.filter(post => post.user_id === current_user.id)
+              return < MyAccount posts={ myPost } />
+            }} />
           <Route path="/postindex" render={() => {
               let myPost = this.state.posts.filter(post => post.user_id === current_user.id)
               return < PostIndex posts={ myPost } />
