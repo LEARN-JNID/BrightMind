@@ -71,6 +71,13 @@ if(window.scrollY >= 450){
                </NavItem>
               { logged_in &&
               <NavItem id='nav-links'>
+                <NavLink to="/myaccount" id='nav-link-text'>
+                  My Account
+                </NavLink>
+              </NavItem>
+              }
+              { logged_in &&
+              <NavItem id='nav-links'>
                 <NavLink to="/postindex" id='nav-link-text'>
                   My Journal
                 </NavLink>
