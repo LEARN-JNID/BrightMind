@@ -10,21 +10,10 @@ export default class Header extends Component {
     super(props);
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true,
-      nav: false
+      collapsed: true
     }
   }
-  
-listenScrollEvent = (e) => {
-if(window.scrollY >= 450){
- this.setState({nav: true})
-}else {
-  this.setState({nav: false})
-}
- }
- componentDidMount() {
-  window.addEventListener('scroll', this.listenScrollEvent)
-}
+
 
   toggleNavbar() {
     this.setState({
@@ -45,11 +34,9 @@ if(window.scrollY >= 450){
 
     return (
       <>
-        
-        <Navbar color="faded" light 
+        <Navbar 
         sticky='top'
-         className={this.state.collapsed ? 'navbar-container' : '#navbar-container active'}
-         id={this.state.nav ? 'nav-color' : 'navbar-container'}
+         className={this.state.collapsed ? 'nav-color' : 'navbar-container active'}
         >
           <NavbarBrand href="/" className="mr-auto" >
             {/* <h3 id='bm-title'>Bright Mind</h3> */}
@@ -65,7 +52,7 @@ if(window.scrollY >= 450){
                 </NavLink>
                </NavItem>
               <NavItem id='nav-links'>
-                <NavLink to="/" id='nav-link-text'>
+                <NavLink to="/aboutus" id='nav-link-text'>
                     About Us
                 </NavLink>
                </NavItem>
