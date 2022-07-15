@@ -19,7 +19,8 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      posts: []
+      posts: [],
+      loading: true
     }
   }
 
@@ -30,12 +31,12 @@ class App extends React.Component {
   readPost = () => {
     fetch('/posts')
       .then(res => res.json())
-      .then(payload => this.setState({ posts: payload }))
+      .then(payload => this.setState({ posts: payload, loading: false }))
       .catch(errors => console.log(errors))
   }
 
   deletePost = (id) => {
-    fetch(`http://localhost:3000/posts/${id}`, {
+    fetch(`/posts/${id}`, {
     headers: {
       "Content-Type": "application/json"
     },
@@ -60,7 +61,7 @@ class App extends React.Component {
   }
 
   editPost = (post, id) => {
-    fetch(`http://localhost:3000/posts/${id}`, {
+    fetch(`/posts/${id}`, {
     body: JSON.stringify(post),
     headers: {
       "Content-Type": "application/json"
@@ -94,7 +95,11 @@ class App extends React.Component {
             render={(props) => {
             let id = props.match.params.id
             let post = this.state.posts.find(postObject => postObject.id == id)
-            return <PostShow deletePost={this.deletePost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+            if(!this.state.loading){
+              return <PostShow deletePost={this.deletePost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+            } else {
+             { return (<div>Waiting</div>)}
+            }
             }}
              />
           <Route path="/postedit/:id"

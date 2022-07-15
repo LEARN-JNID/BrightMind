@@ -18,7 +18,7 @@ export default class PostShow extends Component {
     if(this.state.deleted) {
       return(<Redirect to="/postindex" />)
     }
-
+    console.log("THIS IS PROPS: ", this.props)
     return (
       <>
     {this.props.logged_in &&
