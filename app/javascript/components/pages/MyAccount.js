@@ -11,12 +11,16 @@ class MyAccount extends Component {
                 okay: 0,
                 miserable: 0,
                 happy: 0
-            }
+            },
+            quotes: [],
+            currentQuote: {},
+            loading: true
         }
       }
 
       componentDidMount = () => {
         this.generateChartInfo()
+        this.getQuotes()
       }
 
       generateChartInfo = () => {
@@ -25,12 +29,30 @@ class MyAccount extends Component {
             let currentPostMood = post.mood.toLowerCase()
             moods[currentPostMood] = moods[currentPostMood] + 1
         })
-        
         this.setState({moods: moods})
       }
 
+      getQuotes = () => {
+        fetch('https://type.fit/api/quotes')
+          .then(res => res.json())
+          .then(payload =>{ 
+            let happyQuotes = payload.filter(quote => {
+                return quote.text.includes('happy') || quote.text.includes('happiness')
+            })
+            this.setState({ quotes: happyQuotes, loading: false })})
+          .catch(errors => console.log(errors))
+
+      }
+
+      randomQuote = () => {
+        let randomNum = Math.floor(Math.random() * (this.state.quotes.length - 1)) + 1;
+        let quote = this.state.quotes[randomNum]
+        this.setState({currentQuote: quote})
+        return quote
+      }
+      
+
     render() {
-        console.log("THIS IS MOODS", this.state.moods)
         return (
             <div>
                 <h3>My Account</h3>
@@ -48,8 +70,18 @@ class MyAccount extends Component {
                     </ul>
                 </div>
                 <div id="quotes">
-                    <h4>Quote of the Day</h4>
-                    <p>Don't be a baby about it, be about it baby</p>
+                    <h2>Quote</h2>
+                    {this.state.loading && 
+                        <p>Loading...</p>
+                    }
+                    {!this.state.loading &&
+                    <div>
+                        <p>{this.state.currentQuote.text}</p>
+                        <h4>{this.state.currentQuote.author}</h4>
+                        <button onClick={this.randomQuote}>Generate Quote</button>
+                    </div>
+                    }
+                    
                 </div>
                 <Chart moods={this.state.moods}/>
             </div>

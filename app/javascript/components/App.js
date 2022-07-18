@@ -83,8 +83,12 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/aboutus" component={AboutUs} />
           <Route path="/myaccount" render={() => {
+            if(!this.state.loading){
               let myPost = this.state.posts.filter(post => post.user_id === current_user.id)
               return < MyAccount posts={ myPost } />
+            } else {
+              { return (<div>Waiting</div>)}
+            }
             }} />
           <Route path="/postindex" render={() => {
               let myPost = this.state.posts.filter(post => post.user_id === current_user.id)
