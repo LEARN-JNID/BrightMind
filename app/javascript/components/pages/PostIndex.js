@@ -12,34 +12,45 @@ import {
 // import Filter from '../components/Filter';
 
 export default class PostIndex extends Component {
-
-
-  filterChoice(e){
-    if (e.target.value !== "Date"){
-      let filteredPost = this.state.posts.filter(post => {
-        return post.mood == e.target.value
-      })
+  constructor(props){
+    super(props)
+    this.state = {
+      posts: this.props.posts
     }
-    this.setState({filterChoice: e.target.value})
   }
 
+  componentDidUpdate(prevProps){
+    if(this.props.posts !== prevProps.posts){
+      this.setState({posts: this.props.posts})
+    }
+  }
 
-// filterChoice(e){
-//   this.setState({
-//     posts: this.state.post.filter(function(choice) {
-//       return choice == e.target.value
-//     })
-//   })
-// }
+  filterChoice = (e) => {
+    if(e.target.value == "All") {
+      this.setState({posts: this.props.posts})
+    } else if(e.target.value !== "Date" || e.target.value !== "All"){
+      let filteredPosts = this.props.posts.filter(post => {
+        return post.mood === e.target.value
+      })
+      this.setState({posts: filteredPosts})
+    } else {
+      // Dates
+      // iterate
+      // look at dates
+      // convert dates
+      // compare dates
+    }
+  }
 
   
   render() {
-    const {posts} = this.props
-
+    const {posts} = this.state
+    console.log("THIS IS POSTS STATE", this.state.posts)
     return (
       <>
         <h3>My Journal's</h3>
         <select onChange={this.filterChoice}>
+          <option value="All">All</option>
           <option value="Happy">Happy</option>
           <option value="Good">Good</option>
           <option value="Okay">Okay</option>
@@ -47,11 +58,12 @@ export default class PostIndex extends Component {
           <option value="Miserable">Miserable</option>
           <option value="Date">Date Time</option>
         </select>
-        <div value={this.state.filterChoice}>
+        <div>
           {posts &&
            posts.map((currentPost, index)=> {
             return ( 
               <NavLink 
+              key={index}
               to={`/postshow/${currentPost.id}`}
               id='index-cards'>
                 <Card 
