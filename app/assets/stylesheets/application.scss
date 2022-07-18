@@ -58,7 +58,7 @@ body{
   width: 100%;
   bottom: 0;
   left: 0;
-  background-color: #dfdce3;
+  background-color: #4abdac;
   border-top: 2px solid #a3a0a0;
 }
 
@@ -88,7 +88,7 @@ body{
   background-size: cover;
   width: 100%;
   z-index: -1;
-  height: 550px;
+  height: 600px;
   display: block;
   flex-direction: column;
   justify-content: flex-end;
@@ -206,3 +206,68 @@ body{
   #ab-icons:hover{
     color: #f7b733;
   }
+
+  //  Index ---------
+
+  .index-container{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  #index-cards{
+    margin: 30px 0;
+    filter: drop-shadow(0 0.2rem 0.25rem black);
+    text-align: center;
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    color: black;
+  }
+
+  #index-cards:hover{
+    transition: all 0.3s ease-in;
+    transform: scale(1.1); 
+    cursor: pointer;
+    filter: drop-shadow(0 0.2rem 0.25rem #f7b733);
+  }
+
+  .jc-div{
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    line-height: 20px;
+  }
+
+  #mood-div-c{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  #post-title{
+    font-size: 25px;
+    border-bottom: 2px solid #d3d3d3;
+    text-transform: capitalize;
+  }
+
+  #post-mood{
+    font-size: 20px;
+
+  }
+
+  #posts-h3{
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .index-page{
+    background-color: #dfdce3;
+  }
+  
+  #post-icon{
+    line-height: 20px;
+    font-size: 20px;
+  }
+ 
