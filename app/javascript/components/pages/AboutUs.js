@@ -32,11 +32,11 @@ export default class AboutUs extends Component {
 
         <Card id='ab-cards' 
         style={{ width: '30rem' }}>
-          <CardImg id='ab-card-img' src={'https://media-exp1.licdn.com/dms/image/C5603AQHAoB930aRElw/profile-displayphoto-shrink_200_200/0/1655934427119?e=1663200000&v=beta&t=oB3ojrZp0YlASiD4Wfpueh_KJcb_Wdb1XBamy3Fp9zk'} />
+          <CardImg id='ab-card-img' src={'https://mail.google.com/mail/u/0?ui=2&ik=ca153d4ae4&attid=0.1&permmsgid=msg-f:1738709250007429633&th=182122d9ce60f201&view=att&disp=safe'} />
           <CardBody>
             <CardTitle className='ab-card-t'>Ivan Ortega</CardTitle>
             <CardSubtitle className='ab-card-s'>Tech Lead</CardSubtitle>
-            <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus urna duis convallis convallis tellus id. Diam volutpat commodo sed egestas egestas fringilla. Morbi non arcu risus quis varius quam.
+            <CardText>I started as a young optimist of anything and everything I thought of. From self teaching sports, gaming, music, and most anything I know, it’s a journey well learned and appreciated. If I want it, I go after it. Never give up because It’s better to have no regrets than any at all. I’m in the process of being a developer as well, which I see to marry with music and create something astounding and inspirational. Put me in any challenging position and I will always find a way. I am always looking on the bright side because there is always something to be appreciative about.
             <a id='ab-icons'
             href='https://github.com/iiAnti'
             target='_blank'><AiFillGithub /></a>
