@@ -110,7 +110,11 @@ class App extends React.Component {
             render={(props) => {
               let id = props.match.params.id
               let post = this.state.posts.find(postObject => postObject.id == id)
-              return <PostEdit editPost={this.editPost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+              if(!this.state.loading){
+                return <PostEdit editPost={this.editPost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+              } else {
+                { return (<div>Waiting</div>)}
+              }
               }}
                />
         </Switch>
