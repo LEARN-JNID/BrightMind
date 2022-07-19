@@ -35,7 +35,7 @@ export default class PostIndex extends Component {
                       <CardSubtitle 
                       id='post-mood'>
                         {currentPost.mood}</CardSubtitle>
-                      <GoPrimitiveDot id='post-icon'/>
+                      <GoPrimitiveDot  style={{color: currentPost.color}}  id='post-icon'/>
                     </div>
                     <CardText id='post-text'>{`${currentPost.body.slice(0,150)} ...`}</CardText>
                   </CardBody>
