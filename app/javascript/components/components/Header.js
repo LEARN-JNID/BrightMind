@@ -91,7 +91,12 @@ export default class Header extends Component {
               <NavItem id='nav-links'>
                 <a href={new_user_route} id='nav-link-text'>Sign Up</a>
               </NavItem>
-              }     
+              }   
+                <NavItem id='nav-links'>
+                <NavLink to="/services" id='nav-link-text'>
+                    Services
+                </NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
