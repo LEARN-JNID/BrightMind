@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 export default class Services extends Component {
     render() {
@@ -22,7 +22,6 @@ export default class Services extends Component {
                     <h3>Nami (National alliance in mental health)</h3>
                     <h5><a href="https://www.nami.org/Home">Nami</a></h5>
                     <p>
-                        {" "}
                         NAMI, the National Alliance on Mental Illness, is the
                         nation’s largest grassroots mental health organization
                         dedicated to building better lives for the millions of
@@ -35,7 +34,7 @@ export default class Services extends Component {
                     <p>
                         Makes professional therapy accessible, affordable, and
                         convenient — so anyone who struggles with life’s
-                        challenges can get help, anytime and anywhere.{" "}
+                        challenges can get help, anytime and anywhere.
                     </p>
                 </div>
                 <div>
@@ -71,7 +70,7 @@ export default class Services extends Component {
                         Imagine a world where you can tap into the health
                         experiences of millions of people – and translate these
                         into an action plan with the support of peers and
-                        patient organisations.{" "}
+                        patient organisations.
                     </p>
                 </div>
                 <h3>Zencare</h3>
@@ -86,6 +85,6 @@ export default class Services extends Component {
                     experience.
                 </p>
             </>
-        );
+        )
     }
 }
