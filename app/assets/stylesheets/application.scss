@@ -322,3 +322,130 @@ body{
 #show-mood{
   font-size: 20px;
 }
+
+#s-d-button{
+  background-color: #fc4a1a;
+}
+
+#s-c-button{
+  background-color: #a3a0a0;
+}
+
+  //  Create/Edit ---------
+.form-container{
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#form-body{
+  width: 75%;
+  display: block;
+  margin: auto;
+}
+
+#form-title{
+  text-align: center;
+}
+
+#top-group{
+  width: 45%;
+ 
+}
+
+#top-group-c{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#form-text{
+  resize:none;
+}
+
+// -----
+#btn{
+  position:relative;
+  display: block;
+  margin: auto;
+  width: 200px;
+  border: 5px solid #f9c23c;
+  padding: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #4abdac;
+}
+
+#btn p{
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 20px;
+  margin-left: 35px;
+  transition: all 0.5s ease;
+}
+
+/* Style the first icon with class send */
+#send{
+ position: absolute;
+ top:15px;
+ left: 30px;
+ color: #fff;
+ transition: all 0.5s ease;
+ font-size: 35px;
+}
+
+/* Style the second icon with class send2 */
+#send2{
+ position: absolute;
+ top:80px;
+ left: 30px;
+ color: #a3a0a0;
+ transition: all 0.5s ease;
+ font-size: 35px;
+}
+
+
+/* Hover effects */
+#btn:hover{
+ background-color: #f9c23c;
+ transition: all 0.5s ease;
+}
+
+#btn:hover p{
+ color: #a3a0a0;
+ transition: all 0.5s ease;
+ animation: move 1s linear 1s forwards;
+}
+
+#btn:hover #send{
+ top: -50px;
+ transition: all 0.5s ease;
+}
+
+.btn:hover #send2{
+ top: 15px;
+ transition: all 0.5s ease;
+ animation: sending 1s linear 1s forwards;
+}
+
+
+/* CSS3 animation keyframes */
+@keyframes sending{
+ 0%{
+   transform: translateY(0);
+ }
+ 100%{
+   transform: translate(40px, -60px);
+ }
+}
+
+@keyframes move{
+ 0%{
+   transform: translateX(0);
+ }
+ 100%{
+   transform: translateX(-18px);
+ }
+}

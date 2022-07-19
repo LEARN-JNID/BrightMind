@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Redirect } from 'react-router-dom'
+import {GiSpellBook} from 'react-icons/gi'
 import {GoPrimitiveDot} from 'react-icons/go'
 
 export default class PostNew extends Component {
@@ -59,23 +60,24 @@ export default class PostNew extends Component {
       return (<Redirect to={'/postindex'} />);
   }
     return (
-      <>
-        <h3>PostNew</h3>
-        <Form style={{backgroundColor: this.state.color}}>
-          <FormGroup>
-              <Label for="title">
-                  Title
-              </Label>
-              <Input
-                  name="title"
-                  placeholder="Title"
-                  type="text"
-                  onChange={this.handleChange}
-                  value={this.state.newPost.title}
-                />
-          </FormGroup>
-          <FormGroup>
-              <Label for="mood">Mood  <GoPrimitiveDot  style={{color: this.state.newPost.color}}  id='post-icon'/> </Label>
+      <div className='form-container'>
+        <h3 id='form-title'>PostNew</h3>
+        <Form id='form-body'>
+          <div id='top-group-c'>
+            <FormGroup id='top-group'>
+                <Label for="title">
+                    Title
+                </Label>
+                <Input
+                    name="title"
+                    placeholder="Title"
+                    type="text"
+                    onChange={this.handleChange}
+                    value={this.state.newPost.title}
+                  />
+            </FormGroup>
+            <FormGroup id='top-group'>
+                 <Label for="mood">Mood  <GoPrimitiveDot  style={{color: this.state.newPost.color}}  id='post-icon'/> </Label>
                   <Input onChange={this.handleChange} type="select" name="mood" id="exampleSelect">
                     <option>Happy</option>
                     <option>Good</option>
@@ -83,24 +85,29 @@ export default class PostNew extends Component {
                     <option>Sad</option>
                     <option>Miserable</option>
                   </Input>
-          </FormGroup>
+            </FormGroup>
+          </div>
           <FormGroup>
               <Label for="body">
                   Body
               </Label>
               <Input
+                  id='form-text'
+                  rows="10"
                   name="body"
-                  placeholder="body"
-                  type="text"
+                  placeholder="Body"
+                  type="textarea"
                   onChange={this.handleChange}
                   value={this.state.newPost.body}
                 />
           </FormGroup>
-          <Button id="submit" onClick={this.handleSubmit}>
-              Submit
+          <Button id="btn" onClick={this.handleSubmit}>
+            <GiSpellBook id="send" aria-hidden="true"/>
+            <GiSpellBook id="send2" aria-hidden="true"/>
+            <p>publish</p>
           </Button>
         </Form>
-      </>
+      </div>
     )
   }
 }

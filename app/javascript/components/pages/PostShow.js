@@ -45,8 +45,8 @@ render() {
       <Modal isOpen={this.state.modal} toggle={this.toggle}>
         <ModalHeader toggle={this.toggle}>Are you sure you want to delete this journal?</ModalHeader>
         <ModalFooter>
-          <Button color="primary" onClick={this.handleDelete}>Forget Journal</Button>{' '}
-          <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+          <Button id='s-d-button' onClick={this.handleDelete}>Forget Journal</Button>{' '}
+          <Button id='s-c-button' onClick={this.toggle}>Cancel</Button>
         </ModalFooter>
     </Modal>
     <div id='show-body'>   
