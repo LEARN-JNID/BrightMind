@@ -7,7 +7,7 @@ export default class Services extends Component {
                 <h1>Services</h1>
                 <div>
                     <h3>The Tribe</h3>
-                    <h5><a href="https://support.therapytribe.com/">The Tribe</a></h5>
+                    <h5><a href="https://support.therapytribe.com/">https://support.therapytribe.com/</a></h5>
                     <p>
                         At TherapyTribe,they believe that individuals become
                         empowered to help themselves and others when they feel a
@@ -20,7 +20,7 @@ export default class Services extends Component {
                 </div>
                 <div>
                     <h3>Nami (National alliance in mental health)</h3>
-                    <h5><a href="https://www.nami.org/Home">Nami</a></h5>
+                    <h5><a href="https://www.nami.org/Home">https://www.nami.org/Home</a></h5>
                     <p>
                         NAMI, the National Alliance on Mental Illness, is the
                         nation’s largest grassroots mental health organization
@@ -30,7 +30,7 @@ export default class Services extends Component {
                 </div>
                 <div>
                     <h3>Better Help</h3>
-                    <h5><a href="https://www.betterhelp.com/">Better Help</a></h5>
+                    <h5><a href="https://www.betterhelp.com/">https://www.betterhelp.com/</a></h5>
                     <p>
                         Makes professional therapy accessible, affordable, and
                         convenient — so anyone who struggles with life’s
@@ -39,7 +39,7 @@ export default class Services extends Component {
                 </div>
                 <div>
                     <h3>PostpartumProgress</h3>
-                    <h5><a href="https://postpartumprogress.com/about">PostpartumProgress</a></h5>
+                    <h5><a href="https://postpartumprogress.com/about">https://postpartumprogress.com/about</a></h5>
                     <p>
                         Postpartum is the world’s most widely-read blog
                         dedicated to maternal mental illness.
@@ -47,7 +47,7 @@ export default class Services extends Component {
                 </div>
                 <div>
                     <h3>DBSA(Depression and Bipolar Support Alliance)</h3>
-                    <h5><a href="https://www.dbsalliance.org/education/">DBSA</a></h5>
+                    <h5><a href="https://www.dbsalliance.org/education/">https://www.dbsalliance.org/education/</a></h5>
                     <p>
                         DBSA provides hope, help, support, and education to
                         improve the lives of people who have mood disorders.
@@ -55,7 +55,7 @@ export default class Services extends Component {
                 </div>
                 <div>
                     <h3>988Suicide&crisisLifeline</h3>
-                    <h5><a href="https://988lifeline.org/">988Suicide&crisisLifeline</a></h5>
+                    <h5><a href="https://988lifeline.org/">https://988lifeline.org/</a></h5>
                     <p>
                         The Lifeline provides 24/7, free and confidential
                         support for people in distress, prevention and crisis
@@ -65,7 +65,7 @@ export default class Services extends Component {
                 </div>
                 <div>
                     <h3>Healthunlocked</h3>
-                    <h5><a href="https://healthunlocked.com/">Healthunlocked</a></h5>
+                    <h5><a href="https://healthunlocked.com/">https://healthunlocked.com/</a></h5>
                     <p>
                         Imagine a world where you can tap into the health
                         experiences of millions of people – and translate these
@@ -74,7 +74,7 @@ export default class Services extends Component {
                     </p>
                 </div>
                 <h3>Zencare</h3>
-                <h5><a href="https://zencare.co/">Zencare</a></h5>
+                <h5><a href="https://zencare.co/">https://zencare.co/</a></h5>
                 <p>
                     Zencare started as a solution to a common problem: it's
                     difficult to find a great-fitting therapist through an
