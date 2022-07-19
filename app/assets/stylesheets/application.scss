@@ -270,4 +270,55 @@ body{
     line-height: 20px;
     font-size: 20px;
   }
- 
+
+  //  Show ---------
+ #show-card{
+  justify-content: center;
+  text-align: center;
+  display: block;
+ }
+
+ #show-body{
+  background-color: #dfdce3;
+ }
+
+ #show-title{
+  font-size: 40px;
+  border-bottom: 2px solid #d3d3d3;
+  text-transform: capitalize;
+}
+
+.show-sub{
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+#show-icons{
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.show-text{
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.show-buttons{
+  margin: 10px;
+  background-color: #f7b733;
+  color: black;
+}
+
+#navlink-show{
+  text-decoration: none;
+  color: black;
+}
+
+.show-buttons:hover{
+  background-color: #f5c667;  
+  color: black;
+}
+
+#show-mood{
+  font-size: 20px;
+}
