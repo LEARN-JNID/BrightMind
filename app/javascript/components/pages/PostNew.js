@@ -79,7 +79,7 @@ export default class PostNew extends Component {
           <Button id="btn" onClick={this.handleSubmit}>
             <GiSpellBook id="send" aria-hidden="true"/>
             <GiSpellBook id="send2" aria-hidden="true"/>
-              <p>publish</p>
+            <p>publish</p>
           </Button>
         </Form>
       </div>
