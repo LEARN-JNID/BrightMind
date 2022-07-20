@@ -48,7 +48,6 @@ class MyAccount extends Component {
         let randomNum = Math.floor(Math.random() * (this.state.quotes.length - 1)) + 1;
         let quote = this.state.quotes[randomNum]
         this.setState({currentQuote: quote})
-        return quote
       }
       
 

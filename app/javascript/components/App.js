@@ -15,6 +15,7 @@ import AboutUs from './pages/AboutUs'
 import Footer from './components/Footer'
 
 
+
 class App extends React.Component {
   constructor(props){
     super(props)
@@ -23,6 +24,8 @@ class App extends React.Component {
       loading: true
     }
   }
+
+
 
   componentDidMount() {
     this.readPost()
