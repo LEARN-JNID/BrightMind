@@ -6,6 +6,7 @@ import {
   Switch
 } from 'react-router-dom'
 import Home from './pages/Home'
+import Services from './pages/Services'
 import MyAccount from './pages/MyAccount'
 import PostIndex from './pages/PostIndex'
 import PostNew from './pages/PostNew'
@@ -13,6 +14,7 @@ import PostShow from './pages/PostShow'
 import PostEdit from './pages/PostEdit'
 import AboutUs from './pages/AboutUs'
 import Footer from './components/Footer'
+
 
 
 class App extends React.Component {
@@ -23,6 +25,8 @@ class App extends React.Component {
       loading: true
     }
   }
+
+
 
   componentDidMount() {
     this.readPost()
@@ -81,6 +85,7 @@ class App extends React.Component {
       <Header {...this.props} />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/services" component={Services} />
           <Route exact path="/aboutus" component={AboutUs} />
           <Route path="/myaccount" render={() => {
             if(!this.state.loading){
@@ -110,7 +115,11 @@ class App extends React.Component {
             render={(props) => {
               let id = props.match.params.id
               let post = this.state.posts.find(postObject => postObject.id == id)
-              return <PostEdit editPost={this.editPost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+              if(!this.state.loading){
+                return <PostEdit editPost={this.editPost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+              } else {
+                { return (<div>Waiting</div>)}
+              }
               }}
                />
         </Switch>
