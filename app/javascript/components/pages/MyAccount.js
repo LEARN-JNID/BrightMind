@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 import Chart from '../components/Chart'
+import {NavLink} from 'react-router-dom'
+import {AiOutlineArrowRight} from 'react-icons/ai'
+import {
+    Card,
+    CardHeader,
+    CardBody,
+    CardText,
+    CardTitle,
+    Button,
+    CardFooter
+  } from 'reactstrap';
 
 class MyAccount extends Component {
     constructor(props){
@@ -14,7 +25,8 @@ class MyAccount extends Component {
             },
             quotes: [],
             currentQuote: {},
-            loading: true
+            loading: true,
+            isHidden: true
         }
       }
 
@@ -47,43 +59,51 @@ class MyAccount extends Component {
       randomQuote = () => {
         let randomNum = Math.floor(Math.random() * (this.state.quotes.length - 1)) + 1;
         let quote = this.state.quotes[randomNum]
-        this.setState({currentQuote: quote})
+        this.setState({currentQuote: quote, isHidden: false})
       }
       
 
     render() {
+        console.log('display', this.state.isHidden)
         return (
-            <div>
+            <div className='account-container'>
                 <h3>My Account</h3>
-                <div id="posts">
-                    <ul>
-                        {this.props.posts && 
-                        this.props.posts.map((currentPost, index) => {
-                            return(
-                                <li key={index}>
-                                    currentPost
-                                </li>
-                                )
-                        }) 
+                <div id='account-group-1'>
+                    <Card style={{ width: '30rem', height: '25rem'}}
+                     className='project-card'>
+                    <NavLink to="/postindex">
+                        <CardTitle className='project-card-content'>View Your Journal <AiOutlineArrowRight/></ CardTitle> 
+                    </NavLink>
+                    </Card>
+                    <Card 
+                    id="quotes"
+                    style={{ width: '30rem', height: '25rem'}} >
+                        <CardHeader><h2>Quote</h2></CardHeader>
+                        {this.state.loading && 
+                            <p>Loading...</p>
                         }
-                    </ul>
-                </div>
-                <div id="quotes">
-                    <h2>Quote</h2>
-                    {this.state.loading && 
-                        <p>Loading...</p>
-                    }
-                    {!this.state.loading &&
-                    <div>
-                        <p>{this.state.currentQuote.text}</p>
-                        <h4>{this.state.currentQuote.author}</h4>
-                        <button onClick={this.randomQuote}>Generate Quote</button>
+                        {!this.state.loading &&
+                        <div>
+                            <CardBody id='cq-body'>
+                               <CardText id='cq-text' 
+                               className={this.state.isHidden ? 'cq-text': 'cq-text-display'}> 
+                                    {`"${this.state.currentQuote.text}"`}
+                                    <h4>{`-${this.state.currentQuote.author}`}</h4>
+                                </CardText>
+                            </CardBody>
+                            <CardFooter id='cq-footer'>
+                                <Button id='button-q' onClick={this.randomQuote}>Generate Quote</Button>
+                            </CardFooter>
+                        </div>
+                        }
+                    </Card>
                     </div>
-                    }
-                    
+                    <Card 
+                    id='chart-card'
+                    style={{ width: '78%', height: '78%'}}>
+                        <Chart moods={this.state.moods}/>
+                    </Card>
                 </div>
-                <Chart moods={this.state.moods}/>
-            </div>
         );
     }
 }

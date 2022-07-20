@@ -61,7 +61,7 @@ export default class PostNew extends Component {
   }
     return (
       <div className='form-container'>
-        <h3 id='form-title'>PostNew</h3>
+        <h3 id='form-title'>Create an Entry</h3>
         <Form id='form-body'>
           <div id='top-group-c'>
             <FormGroup id='top-group'>
