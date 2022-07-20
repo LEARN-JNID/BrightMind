@@ -41,7 +41,7 @@ describe("When MyAccount renders", () => {
   })
 
   it("creates a div to contain a few user posts", () => {
-    const accountChart  = myAccountRender.find("[id='posts]")
+    const accountChart  = myAccountRender.find("[id='posts']")
     expect(accountChart.length).toEqual(1)
 })
   })

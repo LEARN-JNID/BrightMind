@@ -68,6 +68,7 @@ class MyAccount extends Component {
         return (
             <div className='account-container'>
                 <h3>My Account</h3>
+
                 <div id='account-group-1'>
                     <Card style={{ width: '30rem', height: '25rem'}}
                      className='project-card'>
