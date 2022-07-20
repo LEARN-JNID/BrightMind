@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Redirect } from 'react-router-dom'
+import {GiSpellBook} from 'react-icons/gi'
+import {GoPrimitiveDot} from 'react-icons/go'
 
 export default class PostEdit extends Component {
   constructor(props){
@@ -8,8 +10,9 @@ export default class PostEdit extends Component {
     this.state = {
         editedPost: {
           title: '',
-          mood: 'Happy',
-          body: ''
+          mood: '',
+          body: '',
+          color: ''
          },
         submitted: false
     }
@@ -20,12 +23,32 @@ export default class PostEdit extends Component {
   }
 
   handleChange = (e) => {
+    
     let targetValue = e.target.value 
     let targetName = e.target.name
     let { editedPost } = this.state
-    editedPost[targetName] = targetValue
-    console.log(targetValue)
-    this.setState({editedPost: editedPost})
+    if(targetName == "mood"){
+      if(targetValue == "Happy"){
+        editedPost['color'] = "teal"
+        editedPost[targetName] = targetValue
+      } else if(targetValue =="Good"){
+        editedPost['color'] = "green"
+        editedPost[targetName] = targetValue
+      } else if(targetValue =="Okay"){
+        editedPost['color'] = "blue"
+        editedPost[targetName] = targetValue
+      } else if(targetValue =="Sad"){
+        editedPost['color'] = "red"
+        editedPost[targetName] = targetValue
+      } else if(targetValue =="miserable"){
+        editedPost['color'] = "purple"
+        editedPost[targetName] = targetValue
+      }
+      this.setState({editedPost: editedPost})
+    } else {
+      editedPost[targetName] = targetValue
+      this.setState({editedPost: editedPost})
+    }
   }
 
   handleSubmit = () => {
@@ -38,10 +61,11 @@ export default class PostEdit extends Component {
       return (<Redirect to={'/postindex'} />);
   }
     return (
-      <>
-        <h3>PostEdit</h3>
-        <Form>
-          <FormGroup>
+      <div className='form-container'>
+        <h3 id='form-title'>PostEdit</h3>
+        <Form id='form-body'>
+        <div id='top-group-c'>
+          <FormGroup id='top-group'>
               <Label for="title">
                   Title
               </Label>
@@ -53,9 +77,10 @@ export default class PostEdit extends Component {
                   value={this.state.editedPost.title}
                 />
           </FormGroup>
-          <FormGroup>
-              <Label for="mood">Mood</Label>
+          <FormGroup id='top-group'>
+              <Label for="mood">Mood  <GoPrimitiveDot  style={{color: this.state.editedPost.color}}  id='post-icon'/></Label>
                   <Input onChange={this.handleChange} type="select" name="mood" id="exampleSelect">
+                    <option>-</option>
                     <option>Happy</option>
                     <option>Good</option>
                     <option>Okay</option>
@@ -63,23 +88,28 @@ export default class PostEdit extends Component {
                     <option>Miserable</option>
                   </Input>
           </FormGroup>
+        </div>
           <FormGroup>
               <Label for="body">
                   Body
               </Label>
               <Input
+                  id='form-text'
+                  rows="10"
                   name="body"
                   placeholder="body"
-                  type="text"
+                  type="textarea"
                   onChange={this.handleChange}
                   value={this.state.editedPost.body}
                 />
           </FormGroup>
-          <Button id="submit" onClick={this.handleSubmit}>
-              Submit
+          <Button id="btn" onClick={this.handleSubmit}>
+            <GiSpellBook id="send" aria-hidden="true"/>
+            <GiSpellBook id="send2" aria-hidden="true"/>
+            <p>publish</p>
           </Button>
         </Form>
-      </>
+      </div>
     )
   }
 }
