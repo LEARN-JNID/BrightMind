@@ -12,6 +12,8 @@ import {
 export default class AboutUs extends Component {
   render() {
     return (
+      <>
+      <h3>About Us</h3>
       <div className='cards-container'>
         <Card id='ab-cards'
         style={{ width: '30rem' }}>
@@ -83,6 +85,7 @@ export default class AboutUs extends Component {
         
     
       </div>
+      </>
     )
   }
 }

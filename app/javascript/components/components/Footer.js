@@ -10,7 +10,7 @@ export default class Footer extends Component {
           <span>
           <AiOutlineCopyrightCircle id='footer-icons'/>
           </span>
-            Copyright JNID
+            Copyright JNID All rights reserved.
         </p>
         <p id='footer-text'>
           <a href='https://github.com/LEARN-JNID/BrightMind'target='_blank'>

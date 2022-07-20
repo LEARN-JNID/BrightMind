@@ -56,7 +56,7 @@ class MyAccount extends Component {
         return (
             <div>
                 <h3>My Account</h3>
-                <div id="posts">
+                <div id='posts'>
                     <ul>
                         {this.props.posts && 
                         this.props.posts.map((currentPost, index) => {

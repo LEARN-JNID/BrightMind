@@ -10,13 +10,17 @@ import Adapter from 'enzyme-adapter-react-16'
 // Imports in the component we are going to be testing.
 import Header from './Header'
 
+
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
 Enzyme.configure({adapter: new Adapter()})
 
 describe("When Header renders", () => {
-    it("displays a heading", () => {
-      const headerRender = shallow(<Header />)
-      const headerHeading = headerRender.find("h3").text()
-      expect(headerHeading).toEqual("Header")
+  let headerRender
+  beforeEach(() => {
+    headerRender = shallow(<Header />)
+  })
+    it("has a navbar to navigate through the app", () => {
+      const headerHeading = headerRender.find("Navbar")
+      expect(headerHeading.length).toEqual(1)
     })
   })

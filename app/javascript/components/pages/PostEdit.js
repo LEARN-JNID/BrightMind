@@ -39,7 +39,7 @@ export default class PostEdit extends Component {
   }
     return (
       <>
-        <h3>PostEdit</h3>
+        <h3>Edit Entry</h3>
         <Form>
           <FormGroup>
               <Label for="title">

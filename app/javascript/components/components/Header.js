@@ -20,7 +20,7 @@ handleClick = () => {
   toggleNavbar() {
     this.setState({
       collapsed: !this.state.collapsed
-    });
+    })
   }
 
   render() {
@@ -37,7 +37,7 @@ handleClick = () => {
     return (
       <>
         <Navbar 
-        sticky='top'
+         sticky='top'
          className={this.state.collapsed ? 'nav-color' : 'navbar-container active'}
         >
           <NavbarBrand href="/" className="mr-auto" >
