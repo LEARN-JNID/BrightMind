@@ -14,9 +14,30 @@ import PostShow from './PostShow'
 Enzyme.configure({adapter: new Adapter()})
 
 describe("When PostShow renders", () => {
+  let logged_in = true
+  let postShowRender 
+  beforeEach(() => {
+      let post = {
+        title: "Title",
+        create_at: "Today",
+        mood: "mood",
+        body: "Description"
+      }
+       postShowRender = shallow(<PostShow logged_in={logged_in} post={post} />)
+    })
     it("displays a heading", () => {
-      const postShowRender = shallow(<PostShow />)
-      const postShowHeading = postShowRender.find("h3").text()
-      expect(postShowHeading).toEqual("PostShow")
+      const postShowHeading = postShowRender.find("div")
+      expect(postShowHeading.length).toEqual(1)
+    })
+    it("displays a button", () => {
+      const postShowHeading = postShowRender.find("button")
+      expect(postShowHeading.length).toEqual(1)
+    })
+    it('Test click event', () => {
+      const mockCallBack = jest.fn()
+  
+      const button = shallow((<button onClick={mockCallBack}>Delete</button>))
+      button.find('button').simulate('click')
+      expect(mockCallBack.mock.calls.length).toEqual(1);
     })
   })

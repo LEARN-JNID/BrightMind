@@ -14,9 +14,28 @@ import AboutUs from './AboutUs'
 Enzyme.configure({adapter: new Adapter()})
 
 describe("When AboutUs renders", () => {
+  let aboutUsRender
+  beforeEach(() => {
+    aboutUsRender = shallow(<AboutUs />)
+  })
     it("displays a heading", () => {
-      const aboutUsRender = shallow(<AboutUs />)
       const aboutUsHeading = aboutUsRender.find("h3").text()
-      expect(aboutUsHeading).toEqual("About")
+      expect(aboutUsHeading).toEqual("About Us")
+    })
+    it("displays a card from reactstrap per post", () => {
+      const aboutUsCard  = aboutUsRender.find("Card")
+      expect(aboutUsCard.length).toEqual(4)
+    })
+    it("displays a card title from reactstrap per post", () => {
+      const aboutUsCard  = aboutUsRender.find("CardTitle")
+      expect(aboutUsCard.length).toEqual(4)
+    })
+    it("displays a card subtitle from reactstrap per post", () => {
+      const aboutUsCard  = aboutUsRender.find("CardSubtitle")
+      expect(aboutUsCard.length).toEqual(4)
+    })
+    it("displays a card text from reactstrap per post", () => {
+      const aboutUsCard  = aboutUsRender.find("CardText")
+      expect(aboutUsCard.length).toEqual(4)
     })
   })

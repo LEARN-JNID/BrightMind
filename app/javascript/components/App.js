@@ -6,29 +6,122 @@ import {
   Switch
 } from 'react-router-dom'
 import Home from './pages/Home'
+import Services from './pages/Services'
+import MyAccount from './pages/MyAccount'
 import PostIndex from './pages/PostIndex'
 import PostNew from './pages/PostNew'
 import PostShow from './pages/PostShow'
 import PostEdit from './pages/PostEdit'
+import AboutUs from './pages/AboutUs'
 import Footer from './components/Footer'
 
+
+
 class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      posts: [],
+      loading: true
+    }
+  }
+
+
+
+  componentDidMount() {
+    this.readPost()
+  }
+
+  readPost = () => {
+    fetch('/posts')
+      .then(res => res.json())
+      .then(payload => this.setState({ posts: payload, loading: false }))
+      .catch(errors => console.log(errors))
+  }
+
+  deletePost = (id) => {
+    fetch(`/posts/${id}`, {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(payload => this.readPost())
+    .catch(errors => console.log("delete errors:", errors))
+  }
+
+  createPost = (newPost) => {
+    fetch(`/posts`, {
+    body: JSON.stringify(newPost),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "POST"
+    })
+    .then(response => response.json())
+    .then(() => this.readPost())
+    .catch(errors => console.log("Post create errors:", errors))
+  }
+
+  editPost = (post, id) => {
+    fetch(`/posts/${id}`, {
+    body: JSON.stringify(post),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "PATCH"
+    })
+    .then(response => response.json())
+    .then(payload => this.readPost())
+    .catch(errors => console.log("Post create errors:", errors))
+  }
+
   render () {
+    console.log(this.state.posts)
+    const {current_user} = this.props
     return (
     <Router>
       <Header {...this.props} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/postindex" component={PostIndex} />
-          <Route path="/postnew" component={PostNew} />
-          <Route path="/postshow/:id" component={PostShow}
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/aboutus" component={AboutUs} />
+          <Route path="/myaccount" render={() => {
+            if(!this.state.loading){
+              let myPost = this.state.posts.filter(post => post.user_id === current_user.id)
+              return < MyAccount posts={ myPost } />
+            } else {
+              { return (<div>Waiting</div>)}
+            }
+            }} />
+          <Route path="/postindex" render={() => {
+              let myPost = this.state.posts.filter(post => post.user_id === current_user.id)
+              return < PostIndex posts={ myPost } />
+            }} />
+          <Route path="/postnew" render={() => <PostNew createPost={this.createPost} />} />
+          <Route path="/postshow/:id"
             render={(props) => {
             let id = props.match.params.id
-            let apartment = this.state.apartments.find(apartmentObject => apartmentObject.id == id)
-            return <ApartmentShow deleteApartment={this.deleteApartment} apartment={apartment} user_id={this.props.current_user.id}/>
+            let post = this.state.posts.find(postObject => postObject.id == id)
+            if(!this.state.loading){
+              return <PostShow deletePost={this.deletePost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+            } else {
+             { return (<div>Waiting</div>)}
+            }
             }}
-            return  />
-          <Route path="/postedit" component={PostEdit} />
+             />
+          <Route path="/postedit/:id"
+            render={(props) => {
+              let id = props.match.params.id
+              let post = this.state.posts.find(postObject => postObject.id == id)
+              if(!this.state.loading){
+                return <PostEdit editPost={this.editPost} logged_in={this.props.logged_in} post={post} user_id={this.props.current_user.id}/>
+              } else {
+                { return (<div>Waiting</div>)}
+              }
+              }}
+               />
         </Switch>
       <Footer />
     </Router>

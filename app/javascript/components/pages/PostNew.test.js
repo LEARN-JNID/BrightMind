@@ -14,9 +14,40 @@ import PostNew from './PostNew'
 Enzyme.configure({adapter: new Adapter()})
 
 describe("When PostNew renders", () => {
+  let postNewRender
+  beforeEach(() => {
+    postNewRender = shallow(<PostNew />)
+  })
     it("displays a heading", () => {
       const postNewRender = shallow(<PostNew />)
       const postNewHeading = postNewRender.find("h3").text()
       expect(postNewHeading).toEqual("PostNew")
+    })
+    it("creates a new entry", () => {
+      const postNewForm  = postNewRender.find("Form")
+      expect(postNewForm.length).toEqual(1)
+    })
+    it("displays an input for title", () => {
+      const postNewForm = postNewRender.find("[name='title']")
+      expect(postNewForm.length).toEqual(1)
+    })
+    it("displays an input for mood", () => {
+      const postNewForm = postNewRender.find("[name='mood']")
+      expect(postNewForm.length).toEqual(1)
+    })
+    it("displays an input for body", () => {
+      const postNewForm = postNewRender.find("[name='body']")
+      expect(postNewForm.length).toEqual(1)
+    })
+    it("displays a submit button", () => {
+      const postNewForm = postNewRender.find("[id='submit']")
+      expect(postNewForm.length).toEqual(1)
+    })
+    it('Test click event', () => {
+      const mockCallBack = jest.fn()
+
+      const button = shallow((<button onClick={mockCallBack}>Submit</button>))
+      button.find('button').simulate('click')
+      expect(mockCallBack.mock.calls.length).toEqual(1)
     })
   })
