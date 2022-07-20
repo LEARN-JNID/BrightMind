@@ -167,12 +167,20 @@ body{
 
   // About Us ------- 
 
+  #abus-container{
+    background-color: #dfdce3;
+  }
+
+  #abus-container h3{
+    text-align: center;
+    font-size: 40px;
+  }
+
   .cards-container{
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #dfdce3;
   }
 
   #ab-cards{
@@ -284,10 +292,12 @@ body{
   justify-content: center;
   text-align: center;
   display: block;
+  min-height: 73vh;
  }
 
  #show-body{
   background-color: #dfdce3;
+  min-height: 73vh;
  }
 
  #show-title{
@@ -606,3 +616,50 @@ text-align: center;
   transform: scale(1.1); 
   transition: all 0.2s ease-in;
 }
+
+
+ //  Services ---------
+.services-container{
+  background-color: #dfdce3;
+}
+
+.services-container h1{
+  text-align: center;
+  font-size: 40px;
+}
+
+ #services-c{
+  width: 60%;
+  margin: 2rem auto;
+  padding: 1rem;
+  filter: drop-shadow(0 0.2rem 0.25rem black);
+ }
+
+ #last-card{
+  width: 60%;
+  padding: 1rem;
+  filter: drop-shadow(0 0.2rem 0.25rem black);
+  margin: 0 auto;
+ }
+ 
+ #sc-title{
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 2px solid #fc4a1a;
+ }
+
+ #sc-subtitle{
+  color:#a3a0a0;
+  margin-bottom: 10px;
+ }
+
+ #button-serv{
+  border-radius: 32px;
+  background-color: #4abdac;
+  border-color: #4abdac;
+  font-weight: 600;
+  &:hover{
+    background-color: #f9c23c;
+    border-color: #f9c23c;
+  }
+ }

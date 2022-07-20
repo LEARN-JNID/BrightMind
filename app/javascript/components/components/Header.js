@@ -79,6 +79,11 @@ handleClick = () => {
                 </NavLink>
               </NavItem>
               }
+              <NavItem id='nav-links' onClick={this.handleClick}>
+                <NavLink to="/services" id='nav-link-text'>
+                    Services
+                </NavLink>
+              </NavItem>
               { logged_in &&
               <NavItem id='nav-links' onClick={this.handleClick}>
                 <a href={sign_out_route} id='nav-link-text'>Sign Out</a>
@@ -94,11 +99,6 @@ handleClick = () => {
                 <a href={new_user_route} id='nav-link-text'>Sign Up</a>
               </NavItem>
               }   
-                <NavItem id='nav-links'>
-                <NavLink to="/services" id='nav-link-text'>
-                    Services
-                </NavLink>
-              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

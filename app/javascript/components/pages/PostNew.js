@@ -38,7 +38,7 @@ export default class PostNew extends Component {
       } else if(targetValue =="Sad"){
         newPost['color'] = "red"
         newPost[targetName] = targetValue
-      } else if(targetValue =="miserable"){
+      } else if(targetValue =="Miserable"){
         newPost['color'] = "purple"
         newPost[targetName] = targetValue
       }
