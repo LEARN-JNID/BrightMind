@@ -13,8 +13,8 @@ import Chart from './Chart'
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
 Enzyme.configure({adapter: new Adapter()})
 
-describe("When Footer renders", () => {
-    it("displays a heading", () => {
+describe("When Chart renders", () => {
+    it("displays a chart", () => {
       const chartRender = shallow(<Chart />)
       const chartDiv = chartRender.find("div")
       expect(chartDiv.length).toEqual(1)

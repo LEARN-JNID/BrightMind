@@ -14,9 +14,12 @@ import Footer from './Footer'
 Enzyme.configure({adapter: new Adapter()})
 
 describe("When Footer renders", () => {
-    it("displays a heading", () => {
-      const footerRender = shallow(<Footer />)
-      const footerHeading = footerRender.find("h3").text()
-      expect(footerHeading).toEqual("Footer")
+  let footerRender
+  beforeEach(() => {
+    footerRender = shallow(<Footer />)
+  })
+    it("displays a footer", () => {
+      const footerHeading = footerRender.find("[id='footer']")
+      expect(footerHeading.length).toEqual(1)
     })
   })

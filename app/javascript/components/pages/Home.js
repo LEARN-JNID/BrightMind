@@ -8,8 +8,7 @@ export default class Home extends Component {
             <h1 id='intro-h1'>
              Welcome to Bright Mind
               </h1>
-            <h4 id='intro-h4'>
-            An online journaling and mood tracker app</h4>
+            <h4 id='intro-h4'>An online journaling and mood tracker app</h4>
         </div>
         <div id='home-body-c'>
           <div id='body-demo'>

@@ -61,6 +61,7 @@ export default class PostEdit extends Component {
       return (<Redirect to={'/postindex'} />);
   }
     return (
+
       <div className='form-container'>
         <h3 id='form-title'>PostEdit</h3>
         <Form id='form-body'>
