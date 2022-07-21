@@ -33,11 +33,4 @@ describe("When PostShow renders", () => {
       const postShowHeading = postShowRender.find("[className='show-buttons']")
       expect(postShowHeading.length).toEqual(3)
     })
-    // it('Test click event', () => {
-    //   const mockCallBack = jest.fn()
-  
-    //   const button = shallow((<button onClick={mockCallBack}>Delete</button>))
-    //   button.find('button').simulate('click')
-    //   expect(mockCallBack.mock.calls.length).toEqual(1);
-    // })
   })

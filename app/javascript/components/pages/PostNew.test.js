@@ -14,14 +14,17 @@ import PostNew from './PostNew'
 Enzyme.configure({adapter: new Adapter()})
 
 describe("When PostNew renders", () => {
+  let successChecker = false
+  let successFn = ()=>{
+    successChecker = true
+  }
   let postNewRender
   beforeEach(() => {
-    postNewRender = shallow(<PostNew />)
+    postNewRender = shallow(<PostNew newPost={successFn} />)
   })
     it("displays a heading", () => {
-      const postNewRender = shallow(<PostNew />)
       const postNewHeading = postNewRender.find("h3").text()
-      expect(postNewHeading).toEqual("PostNew")
+      expect(postNewHeading).toEqual("Create an Entry")
     })
     it("creates a new entry", () => {
       const postNewForm  = postNewRender.find("Form")
@@ -43,11 +46,13 @@ describe("When PostNew renders", () => {
       const postNewForm = postNewRender.find("[id='btn']")
       expect(postNewForm.length).toEqual(1)
     })
-    it('Test click event', () => {
-      const mockCallBack = jest.fn()
-
-      const button = shallow((<button onClick={mockCallBack}>Submit</button>))
-      button.find('button').simulate('click')
-      expect(mockCallBack.mock.calls.length).toEqual(1)
+    it('should call state for input', () => {
+      const event = {target: {name: "title", value: "spam"}};
+      postNewRender.find('[name="title"]').simulate('change', event)
+      expect(postNewRender.state('newPost').title).toEqual("spam")
+    })
+    t('should call state', () => {
+      postEditRender.find('#btn').simulate('click')
+      expect(successChecker).toEqual(true)
     })
   })

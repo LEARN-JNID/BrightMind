@@ -51,7 +51,6 @@ export default class PostNew extends Component {
   }
 
   handleSubmit = () => {
-    console.log("NEW POST", this.state.newPost)
     this.props.createPost(this.state.newPost)
     this.setState({submitted: true})
   }

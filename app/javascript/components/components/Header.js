@@ -48,11 +48,11 @@ handleClick = () => {
           </div>
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
-            <NavItem className='nav-links' onClick={this.handleClick}>
+              <NavItem className='nav-links' onClick={this.handleClick}>
                 <NavLink to="/" className='nav-link-text'>
                     Home
                 </NavLink>
-               </NavItem>
+              </NavItem>
               <NavItem className='nav-links' onClick={this.handleClick}>
                 <NavLink to="/aboutus" className='nav-link-text'>
                     About Us

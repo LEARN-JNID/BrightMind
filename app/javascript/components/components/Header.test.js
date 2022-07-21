@@ -25,10 +25,8 @@ describe("When Header renders", () => {
       const headerHeading = headerRender.find("Navbar")
       expect(headerHeading.length).toEqual(1)
     })
-    it("has a navbar to navigate through the app", () => {
-      const instance = headerRender.instance()
-      jest.spyOn(instance,'handleClick') 
-      headerRender.find('NavLink').simulate('click')
-      expect(instance.handleClick).toHaveBeenCalledWith(true)
+    it('should call state', () => {
+      postEditRender.find('#btn').simulate('click')
+      expect(successChecker).toEqual(true)
     })
   })

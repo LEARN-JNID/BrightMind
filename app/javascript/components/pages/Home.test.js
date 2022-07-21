@@ -33,7 +33,7 @@ describe("When Home renders", () => {
       expect(homeIntro).toEqual("An online journaling and mood tracker app")
     })
     it("displays the info", () => {
-      const homeIntro = homeRender.find("[id='demo-info']")
+      const homeIntro = homeRender.find("[className='demo-info']")
       expect(homeIntro.length).toEqual(2)
     })
   })
