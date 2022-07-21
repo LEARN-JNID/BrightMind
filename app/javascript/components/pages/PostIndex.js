@@ -48,8 +48,9 @@ export default class PostIndex extends Component {
     console.log("THIS IS POSTS STATE", this.state.posts)
     return (
       <>
+      <div className='index-page'>
         <h3>My Journal's</h3>
-        <select onChange={this.filterChoice}>
+        <select onChange={this.filterChoice} id='select'>
           <option value="All">All</option>
           <option value="Happy">Happy</option>
           <option value="Good">Good</option>
@@ -58,7 +59,7 @@ export default class PostIndex extends Component {
           <option value="Miserable">Miserable</option>
           <option value="Date">Date Time</option>
         </select>
-        <div>
+        <div className='index-container'>
           {posts &&
            posts.map((currentPost, index)=> {
             return ( 
@@ -85,6 +86,7 @@ export default class PostIndex extends Component {
             })
           }
         </div>
+      </div>
       </>
     )
   }

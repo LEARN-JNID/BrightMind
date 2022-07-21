@@ -20,7 +20,7 @@ handleClick = () => {
   toggleNavbar() {
     this.setState({
       collapsed: !this.state.collapsed
-    });
+    })
   }
 
   render() {
@@ -37,7 +37,7 @@ handleClick = () => {
     return (
       <>
         <Navbar 
-        sticky='top'
+         sticky='top'
          className={this.state.collapsed ? 'nav-color' : 'navbar-container active'}
         >
           <NavbarBrand href="/" className="mr-auto" >
@@ -79,6 +79,11 @@ handleClick = () => {
                 </NavLink>
               </NavItem>
               }
+              <NavItem id='nav-links' onClick={this.handleClick}>
+                <NavLink to="/services" id='nav-link-text'>
+                    Services
+                </NavLink>
+              </NavItem>
               { logged_in &&
               <NavItem id='nav-links' onClick={this.handleClick}>
                 <a href={sign_out_route} id='nav-link-text'>Sign Out</a>
@@ -93,7 +98,7 @@ handleClick = () => {
               <NavItem id='nav-links' onClick={this.handleClick}>
                 <a href={new_user_route} id='nav-link-text'>Sign Up</a>
               </NavItem>
-              }     
+              }   
             </Nav>
           </Collapse>
         </Navbar>

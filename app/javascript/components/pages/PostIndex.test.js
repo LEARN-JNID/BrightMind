@@ -14,6 +14,10 @@ import PostIndex from './PostIndex'
 Enzyme.configure({adapter: new Adapter()})
 
 describe("When PostIndex renders", () => {
+  let successChecker = false
+  let successFn = ()=>{
+    successChecker = true
+  }
   const props ={
     posts: [{
       title:"string",
@@ -23,7 +27,7 @@ describe("When PostIndex renders", () => {
   }
   let postIndexRender
   beforeEach(() => {
-    postIndexRender = shallow(<PostIndex {...props}/>)
+    postIndexRender = shallow(<PostIndex {...props} filterChoice= {successFn}/>)
   })
     it("displays a heading", () => {
       const postIndexRender = shallow(<PostIndex />)
@@ -33,5 +37,9 @@ describe("When PostIndex renders", () => {
     it("displays a card from reactstrap per post", () => {
       const postIndexCard  = postIndexRender.find("Card")
       expect(postIndexCard.length).toEqual(1)
-  })
+    })
+    it('should call state', () => {
+      postIndexRender.find('select').simulate('click')
+      expect(successChecker).toEqual(true)
+    })
   })

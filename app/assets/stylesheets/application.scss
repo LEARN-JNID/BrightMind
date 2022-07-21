@@ -167,12 +167,20 @@ body{
 
   // About Us ------- 
 
+  #abus-container{
+    background-color: #dfdce3;
+  }
+
+  #abus-container h3{
+    text-align: center;
+    font-size: 40px;
+  }
+
   .cards-container{
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #dfdce3;
   }
 
   #ab-cards{
@@ -208,6 +216,10 @@ body{
   }
 
   //  Index ---------
+
+  #select{
+    cursor: pointer;
+  }
 
   .index-container{
     height: 100%;
@@ -254,7 +266,6 @@ body{
 
   #post-mood{
     font-size: 20px;
-
   }
 
   #posts-h3{
@@ -264,6 +275,11 @@ body{
 
   .index-page{
     background-color: #dfdce3;
+    text-align: center;
+  }
+
+  .index-page h3{
+    font-size: 3rem;
   }
   
   #post-icon{
@@ -276,10 +292,12 @@ body{
   justify-content: center;
   text-align: center;
   display: block;
+  min-height: 73vh;
  }
 
  #show-body{
   background-color: #dfdce3;
+  min-height: 73vh;
  }
 
  #show-title{
@@ -345,6 +363,7 @@ body{
 
 #form-title{
   text-align: center;
+  font-size: 50px;
 }
 
 #top-group{
@@ -449,3 +468,198 @@ body{
    transform: translateX(-18px);
  }
 }
+
+//  Devise ---------
+
+.form-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+  
+  #h2{
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 3px solid #fc4a1a;
+    width: 18rem;
+    padding-bottom: 5px;
+  }
+
+  .field{
+    width: 300px;
+    margin: 10px auto;
+  }
+
+  .actions{
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+  }
+
+  #submit-button{
+    font-weight: 800;
+    color: white;
+    background-color: #4abdac;
+    border: 1px solid #4abdac;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  #submit-button:hover{
+    background-color: #3c8c80;
+    border: 1px solid #3c8c80;
+  }
+
+  .input-form{
+    width: 300px;
+    height: 40px;
+  }
+  
+ //  Account Page ---------
+
+.account-container{
+justify-content: center;
+background-color: #dfdce3;
+text-align: center;
+}
+
+.account-container h3{
+  font-size: 3rem;
+  }
+
+#account-group-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5vh 0;
+}
+
+#quotes{
+text-align: center;
+
+}
+
+#cq-footer{
+  bottom: 0;
+  left: 0;
+}
+
+#button-q{
+  color: #fff;
+  background-color: #4abdac;
+  border: 1px solid #4abdac;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+#button-q:hover{
+  background-color: #3c8c80;
+  border: 1px solid #3c8c80;
+}
+
+#cq-body{
+ height: 41.5vh;
+}
+
+#cq-text{
+ margin: 5rem 0;
+}
+
+.cq-text{
+  margin: 5rem 0;
+  opacity: 0;
+ }
+
+.cq-text-display{
+  margin: 5rem 0;
+  opacity: 1;
+ }
+
+ .project-card::before {
+  background-image: linear-gradient(0deg, #000, rgba(0, 0, 0, .8) 25%, rgba(0, 0, 0, .6) 50%, rgba(0, 0, 0, .4) 75%, rgba(0, 0, 0, .2));
+  background-position: center;
+  content: "";
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+ 
+ }
+
+ .project-card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background: rgb(255, 255, 255) url('https://www.naturalreaders.com/comfiles/indexfiles/img/audio-create.png') no-repeat scroll left center / cover; 
+}
+
+.project-card-content {
+  color: white;
+  opacity: 1;
+  position: absolute; 
+  font-size: 2rem;
+  margin-left: 17px;
+  bottom: 0px;
+  transition: all 0.2s ease-out;
+}
+
+#chart-card{
+  margin: 0 auto;
+}
+
+.project-card-content:hover {
+  color: #f7b733;
+  transform: scale(1.1); 
+  transition: all 0.2s ease-in;
+}
+
+
+ //  Services ---------
+.services-container{
+  background-color: #dfdce3;
+}
+
+.services-container h1{
+  text-align: center;
+  font-size: 40px;
+}
+
+ #services-c{
+  width: 60%;
+  margin: 2rem auto;
+  padding: 1rem;
+  filter: drop-shadow(0 0.2rem 0.25rem black);
+ }
+
+ #last-card{
+  width: 60%;
+  padding: 1rem;
+  filter: drop-shadow(0 0.2rem 0.25rem black);
+  margin: 0 auto;
+ }
+ 
+ #sc-title{
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 2px solid #fc4a1a;
+ }
+
+ #sc-subtitle{
+  color:#a3a0a0;
+  margin-bottom: 10px;
+ }
+
+ #button-serv{
+  border-radius: 32px;
+  background-color: #4abdac;
+  border-color: #4abdac;
+  font-weight: 600;
+  &:hover{
+    background-color: #f9c23c;
+    border-color: #f9c23c;
+  }
+ }
