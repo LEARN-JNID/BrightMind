@@ -28,8 +28,4 @@ describe("When PostIndex renders", () => {
       const servicesCard  = servicesRender.find("Card")
       expect(servicesCard.length).toEqual(8)
     })
-    // it('should call state', () => {
-    //   postIndexRender.find('select').simulate('click')
-    //   expect(successChecker).toEqual(true)
-    // })
   })
