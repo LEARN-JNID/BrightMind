@@ -63,7 +63,7 @@ export default class PostEdit extends Component {
     return (
 
       <div className='form-container'>
-        <h3 id='form-title'>PostEdit</h3>
+        <h3 id='form-title'>Edit Entry</h3>
         <Form id='form-body'>
         <div id='top-group-c'>
           <FormGroup id='top-group'>
