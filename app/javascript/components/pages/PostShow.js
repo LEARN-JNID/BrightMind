@@ -57,19 +57,19 @@ render() {
         <CardBody>
           <CardTitle id='show-title'>{this.props.post.title}</CardTitle>
           <CardSubtitle className='show-sub'>
-          <BsCalendar id='show-icons'/>{` ${this.props.post.created_at.slice(0, 10)}`}</CardSubtitle>
+          <BsCalendar className='show-icons'/>{` ${this.props.post.created_at.slice(0, 10)}`}</CardSubtitle>
           <CardSubtitle className='show-sub'>
-          <BsClock id='show-icons'/>{` ${this.props.post.created_at.slice(11, 16)}`}</CardSubtitle>
+          <BsClock className='show-icons'/>{` ${this.props.post.created_at.slice(11, 16)}`}</CardSubtitle>
           <div id='mood-div-c'>
-            <CardSubtitle id='show-mood'>{this.props.post.mood}</CardSubtitle>
-            <GoPrimitiveDot id='show-mood'style={{color: this.props.post.color}}/>
+            <CardSubtitle className='show-mood'>{this.props.post.mood}</CardSubtitle>
+            <GoPrimitiveDot className='show-mood'style={{color: this.props.post.color}}/>
           </div>
           <CardText className='show-text'>{this.props.post.body}</CardText>
           <Button className='show-buttons'>
-            <NavLink id='navlink-show' to={'/postindex'}> Go Back </NavLink>
+            <NavLink className='navlink-show' to={'/postindex'}> Go Back </NavLink>
           </Button>
           <Button className='show-buttons'>
-            <NavLink id='navlink-show' to={`/postedit/${this.props.post.id}`}> Edit Entry </NavLink>
+            <NavLink className='navlink-show' to={`/postedit/${this.props.post.id}`}> Edit Entry </NavLink>
           </Button>
           <Button className='show-buttons' onClick={this.toggle}>
             Forget Entry
