@@ -62,7 +62,7 @@ render() {
           <BsClock id='show-icons'/>{` ${this.props.post.created_at.slice(11, 16)}`}</CardSubtitle>
           <div id='mood-div-c'>
             <CardSubtitle id='show-mood'>{this.props.post.mood}</CardSubtitle>
-            <GoPrimitiveDot id='show-mood'/>
+            <GoPrimitiveDot id='show-mood'style={{color: this.props.post.color}}/>
           </div>
           <CardText className='show-text'>{this.props.post.body}</CardText>
           <Button className='show-buttons'>

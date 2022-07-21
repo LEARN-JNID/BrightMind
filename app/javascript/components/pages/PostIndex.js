@@ -85,8 +85,8 @@ export default class PostIndex extends Component {
               )
             })
           }
-           </div>
         </div>
+      </div>
       </>
     )
   }
