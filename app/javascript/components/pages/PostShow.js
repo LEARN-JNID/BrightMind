@@ -39,7 +39,7 @@ render() {
   if(this.state.deleted) {
     return(<Redirect to="/postindex" />)
   }
-  console.log("THIS IS PROPS: ", this.props)
+  // console.log("THIS IS PROPS: ", this.props)
   return (
     <>
       <Modal isOpen={this.state.modal} toggle={this.toggle}>

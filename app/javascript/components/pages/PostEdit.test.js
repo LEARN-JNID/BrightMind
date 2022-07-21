@@ -28,7 +28,8 @@ describe("When PostEdit renders", () => {
       id:1,
       title:"string",
       mood:"string",
-      body:"string"
+      body:"string",
+      color:"string"
     }
     postEditRender = shallow(<PostEdit post={post}  editPost={successFn}/>)
   })
@@ -60,7 +61,11 @@ describe("When PostEdit renders", () => {
       expect(mockCallBack.mock.calls.length).toEqual(1)
     })
     it('should call state', () => {
-      postEditRender.find('#submit').simulate('click')
+      postEditRender.find('#btn').simulate('click')
+      expect(successChecker).toEqual(true)
+    })
+    it('should call state for input', () => {
+      postEditRender.find('.form-container').simulate('click')
       expect(successChecker).toEqual(true)
     })
   })
