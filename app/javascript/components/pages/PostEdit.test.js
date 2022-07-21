@@ -1,6 +1,10 @@
 // Imports React into our test file.
 import React from 'react'
-
+import { 
+  cleanup, 
+  fireEvent, 
+  render 
+} from "@testing-library/react";
 // Imports Enzyme testing and deconstructs Shallow into our test file.
 import Enzyme, { shallow } from 'enzyme'
 
@@ -53,19 +57,13 @@ describe("When PostEdit renders", () => {
       const postEditForm = postEditRender.find("[name='body']")
       expect(postEditForm.length).toEqual(1)
     })
-    it('Test click event', () => {
-      const mockCallBack = jest.fn()
-  
-      const button = shallow((<button onClick={mockCallBack}>Submit</button>))
-      button.find('button').simulate('click')
-      expect(mockCallBack.mock.calls.length).toEqual(1)
-    })
     it('should call state', () => {
       postEditRender.find('#btn').simulate('click')
       expect(successChecker).toEqual(true)
     })
     it('should call state for input', () => {
-      postEditRender.find('.form-container').simulate('click')
-      expect(successChecker).toEqual(true)
+      const event = {target: {name: "title", value: "spam"}};
+      postEditRender.find('[name="title"]').simulate('change', event)
+      expect(postEditRender.state('editedPost').title).toEqual("spam")
     })
   })

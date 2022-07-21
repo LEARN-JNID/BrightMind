@@ -30,20 +30,16 @@ export default class PostEdit extends Component {
     if(targetName == "mood"){
       if(targetValue == "Happy"){
         editedPost['color'] = "teal"
-        editedPost[targetName] = targetValue
       } else if(targetValue =="Good"){
         editedPost['color'] = "green"
-        editedPost[targetName] = targetValue
       } else if(targetValue =="Okay"){
         editedPost['color'] = "blue"
-        editedPost[targetName] = targetValue
       } else if(targetValue =="Sad"){
         editedPost['color'] = "red"
-        editedPost[targetName] = targetValue
       } else if(targetValue =="miserable"){
         editedPost['color'] = "purple"
-        editedPost[targetName] = targetValue
       }
+      editedPost[targetName] = targetValue
       this.setState({editedPost: editedPost})
     } else {
       editedPost[targetName] = targetValue
