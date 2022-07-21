@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Redirect, NavLink } from 'react-router-dom'
 import {GiSpellBook} from 'react-icons/gi'
 import {GoPrimitiveDot} from 'react-icons/go'
+import Fade from 'react-reveal/Fade'
 
 export default class PostEdit extends Component {
   constructor(props){
@@ -63,10 +64,13 @@ export default class PostEdit extends Component {
     return (
 
       <div id='form-container'>
-        <h3 id='form-title'>Edit Entry</h3>
+        <Fade>
+          <h3 id='form-title'>Edit Entry</h3>
+          </Fade>
         <Form id='form-body'>
         <div id='top-group-c'>
           <FormGroup className='top-group'>
+            <Fade left>
               <Label for="title">
                   Title
               </Label>
@@ -77,8 +81,10 @@ export default class PostEdit extends Component {
                   onChange={this.handleChange}
                   value={this.state.editedPost.title}
                 />
+            </Fade>
           </FormGroup>
           <FormGroup className='top-group'>
+            <Fade right>
               <Label for="mood">Mood  <GoPrimitiveDot  style={{color: this.state.editedPost.color}}  className='post-icon'/></Label>
                   <Input onChange={this.handleChange} type="select" name="mood" className="exampleSelect"
                    value={this.state.editedPost.mood}>
@@ -91,9 +97,11 @@ export default class PostEdit extends Component {
                     <option>Sad</option>
                     <option>Miserable</option>
                   </Input>
+            </Fade>
           </FormGroup>
         </div>
           <FormGroup>
+            <Fade>
               <Label for="body">
                   Body
               </Label>
@@ -106,6 +114,7 @@ export default class PostEdit extends Component {
                   onChange={this.handleChange}
                   value={this.state.editedPost.body}
                 />
+            </Fade>
           </FormGroup>
           <Button className='show-buttons'>
             <NavLink className='navlink-show' to={`/postshow/${this.props.post.id}`}> Go Back </NavLink>

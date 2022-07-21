@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Redirect } from 'react-router-dom'
 import {GiSpellBook} from 'react-icons/gi'
 import {GoPrimitiveDot} from 'react-icons/go'
+import Fade from 'react-reveal/Fade'
 
 export default class PostNew extends Component {
   constructor(props){
@@ -61,10 +62,13 @@ export default class PostNew extends Component {
   }
     return (
       <div id='form-container'>
-        <h3 id='form-title'>Create an Entry</h3>
+        <Fade>
+          <h3 id='form-title'>Create an Entry</h3>
+        </Fade>
         <Form id='form-body'>
           <div id='top-group-c'>
             <FormGroup className='top-group'>
+              <Fade left>
                 <Label for="title">
                     Title
                 </Label>
@@ -75,8 +79,10 @@ export default class PostNew extends Component {
                     onChange={this.handleChange}
                     value={this.state.newPost.title}
                   />
+              </Fade>
             </FormGroup>
             <FormGroup className='top-group'>
+              <Fade right>
                  <Label for="mood">Mood  <GoPrimitiveDot  style={{color: this.state.newPost.color}}  id='post-icon'/> </Label>
                   <Input onChange={this.handleChange} type="select" name="mood" id="exampleSelect">
                     <option>Happy</option>
@@ -85,9 +91,11 @@ export default class PostNew extends Component {
                     <option>Sad</option>
                     <option>Miserable</option>
                   </Input>
+                </Fade>
             </FormGroup>
           </div>
           <FormGroup>
+            <Fade>
               <Label for="body">
                   Body
               </Label>
@@ -100,6 +108,7 @@ export default class PostNew extends Component {
                   onChange={this.handleChange}
                   value={this.state.newPost.body}
                 />
+            </Fade>
           </FormGroup>
           <Button id="btn" onClick={this.handleSubmit}>
             <GiSpellBook className="send" aria-hidden="true"/>

@@ -13,6 +13,7 @@ import {
   ModalHeader,
   ModalFooter
 } from 'reactstrap';
+import Zoom from 'react-reveal/Zoom';
 
 export default class PostShow extends Component {
   constructor(props) {
@@ -55,7 +56,9 @@ render() {
       id='show-card'
       style={{ width: '100%', height: 'fit-content'}}>
         <CardBody>
-          <CardTitle id='show-title'>{this.props.post.title}</CardTitle>
+          <Zoom>
+            <CardTitle id='show-title'>{this.props.post.title}</CardTitle>
+          </Zoom>
           <CardSubtitle className='show-sub'>
           <BsCalendar className='show-icons'/>{` ${this.props.post.created_at.slice(0, 10)}`}</CardSubtitle>
           <CardSubtitle className='show-sub'>

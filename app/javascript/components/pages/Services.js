@@ -6,12 +6,14 @@ import {
     CardSubtitle, 
     Button
   } from 'reactstrap';
+import Fade from 'react-reveal/Fade'
 
 export default class Services extends Component {
     render() {
         return (
             <div id='services-container'>
                 <h1>Services</h1>
+
                 <Card className='services-c'>
                     <CardTitle className='sc-title'>The Tribe</CardTitle>
                     <CardText>
@@ -179,7 +181,7 @@ export default class Services extends Component {
                     <a href='https://zencare.co/' target='_blank'>
                         <Button className='button-serv'>Learn More</Button>
                     </a>
-                </Card>
+                </Card> 
             </div>
         )
     }
