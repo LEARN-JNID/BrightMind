@@ -40,7 +40,7 @@ describe("When PostNew renders", () => {
       expect(postNewForm.length).toEqual(1)
     })
     it("displays a submit button", () => {
-      const postNewForm = postNewRender.find("[id='submit']")
+      const postNewForm = postNewRender.find("[id='btn']")
       expect(postNewForm.length).toEqual(1)
     })
     it('Test click event', () => {

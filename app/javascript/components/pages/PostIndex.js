@@ -48,7 +48,7 @@ export default class PostIndex extends Component {
     console.log("THIS IS POSTS STATE", this.state.posts)
     return (
       <>
-      <div className='index-page'>
+      <div id='index-page'>
         <h3>My Journal's</h3>
         <select onChange={this.filterChoice} id='select'>
           <option value="All">All</option>
@@ -59,34 +59,34 @@ export default class PostIndex extends Component {
           <option value="Miserable">Miserable</option>
           <option value="Date">Date Time</option>
         </select>
-        <div className='index-container'>
+        <div id='index-container'>
           {posts &&
            posts.map((currentPost, index)=> {
             return ( 
               <NavLink 
               key={index}
               to={`/postshow/${currentPost.id}`}
-              id='index-cards'>
+              className='index-cards'>
                 <Card 
                 style={{ width: '20rem', height: '15rem'}} 
                 key={index}>
                   <CardBody>
-                    <CardTitle id='post-title'>{currentPost.title}</CardTitle>
-                    <div id='mood-div-c'>
+                    <CardTitle className='post-title'>{currentPost.title}</CardTitle>
+                    <div className='mood-div-c'>
                       <CardSubtitle 
-                      id='post-mood'>
+                      className='post-mood'>
                         {currentPost.mood}</CardSubtitle>
-                      <GoPrimitiveDot  style={{color: currentPost.color}}  id='post-icon'/>
+                      <GoPrimitiveDot  style={{color: currentPost.color}}  className='post-icon'/>
                     </div>
-                    <CardText id='post-text'>{`${currentPost.body.slice(0,150)} ...`}</CardText>
+                    <CardText className='post-text'>{`${currentPost.body.slice(0,150)} ...`}</CardText>
                   </CardBody>
                 </Card>
               </NavLink>
               )
             })
           }
-           </div>
         </div>
+      </div>
       </>
     )
   }

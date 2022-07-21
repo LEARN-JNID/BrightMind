@@ -44,61 +44,61 @@ handleClick = () => {
             {/* <h3 id='bm-title'>Bright Mind</h3> */}
             </NavbarBrand>
           <div className="mr-2" onClick={this.toggleNavbar}>
-          {this.state.collapsed ? <GiHamburgerMenu id='icons'/> : <AiOutlineCloseCircle id='icons'/>}
+          {this.state.collapsed ? <GiHamburgerMenu className='icons'/> : <AiOutlineCloseCircle className='icons'/>}
           </div>
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
-            <NavItem id='nav-links' onClick={this.handleClick}>
-                <NavLink to="/" id='nav-link-text'>
+            <NavItem className='nav-links' onClick={this.handleClick}>
+                <NavLink to="/" className='nav-link-text'>
                     Home
                 </NavLink>
                </NavItem>
-              <NavItem id='nav-links' onClick={this.handleClick}>
-                <NavLink to="/aboutus" id='nav-link-text'>
+              <NavItem className='nav-links' onClick={this.handleClick}>
+                <NavLink to="/aboutus" className='nav-link-text'>
                     About Us
                 </NavLink>
                </NavItem>
               { logged_in &&
-              <NavItem id='nav-links' onClick={this.handleClick}>
-                <NavLink to="/myaccount" id='nav-link-text'>
+              <NavItem className='nav-links' onClick={this.handleClick}>
+                <NavLink to="/myaccount" className='nav-link-text'>
                   My Account
                 </NavLink>
               </NavItem>
               }
               { logged_in &&
-              <NavItem id='nav-links' onClick={this.handleClick}>
-                <NavLink to="/postindex" id='nav-link-text'>
+              <NavItem className='nav-links' onClick={this.handleClick}>
+                <NavLink to="/postindex" className='nav-link-text'>
                   My Journal
                 </NavLink>
               </NavItem>
               }
               { logged_in &&
-              <NavItem id='nav-links' onClick={this.handleClick}>
-                <NavLink to="/postnew" id='nav-link-text'>
+              <NavItem className='nav-links' onClick={this.handleClick}>
+                <NavLink to="/postnew" className='nav-link-text'>
                   Add New Entry
                 </NavLink>
               </NavItem>
               }
-              { logged_in &&
-              <NavItem id='nav-links' onClick={this.handleClick}>
-                <a href={sign_out_route} id='nav-link-text'>Sign Out</a>
-              </NavItem>
-              }
-              { !logged_in&&
-              <NavItem id='nav-links' onClick={this.handleClick}>
-                <a href={sign_in_route} id='nav-link-text'>Sign In</a>
-              </NavItem>
-              }
-              { !logged_in&&
-              <NavItem id='nav-links' onClick={this.handleClick}>
-                <a href={new_user_route} id='nav-link-text'>Sign Up</a>
-              </NavItem>
-              }   
-                <NavItem id='nav-links'>
-                <NavLink to="/services" id='nav-link-text'>
+              <NavItem className='nav-links' onClick={this.handleClick}>
+                <NavLink to="/services" className='nav-link-text'>
                     Services
                 </NavLink>
               </NavItem>
+              { logged_in &&
+              <NavItem className='nav-links' onClick={this.handleClick}>
+                <a href={sign_out_route} className='nav-link-text'>Sign Out</a>
+              </NavItem>
+              }
+              { !logged_in&&
+              <NavItem className='nav-links' onClick={this.handleClick}>
+                <a href={sign_in_route} className='nav-link-text'>Sign In</a>
+              </NavItem>
+              }
+              { !logged_in&&
+              <NavItem className='nav-links' onClick={this.handleClick}>
+                <a href={new_user_route} className='nav-link-text'>Sign Up</a>
+              </NavItem>
+              }   
             </Nav>
           </Collapse>
         </Navbar>

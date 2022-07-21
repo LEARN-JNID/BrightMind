@@ -62,11 +62,11 @@ export default class PostEdit extends Component {
   }
     return (
 
-      <div className='form-container'>
+      <div id='form-container'>
         <h3 id='form-title'>Edit Entry</h3>
         <Form id='form-body'>
         <div id='top-group-c'>
-          <FormGroup id='top-group'>
+          <FormGroup className='top-group'>
               <Label for="title">
                   Title
               </Label>
@@ -78,9 +78,9 @@ export default class PostEdit extends Component {
                   value={this.state.editedPost.title}
                 />
           </FormGroup>
-          <FormGroup id='top-group'>
-              <Label for="mood">Mood  <GoPrimitiveDot  style={{color: this.state.editedPost.color}}  id='post-icon'/></Label>
-                  <Input onChange={this.handleChange} type="select" name="mood" id="exampleSelect">
+          <FormGroup className='top-group'>
+              <Label for="mood">Mood  <GoPrimitiveDot  style={{color: this.state.editedPost.color}}  className='post-icon'/></Label>
+                  <Input onChange={this.handleChange} type="select" name="mood" className="exampleSelect">
                     <option>-</option>
                     <option>Happy</option>
                     <option>Good</option>
@@ -95,7 +95,7 @@ export default class PostEdit extends Component {
                   Body
               </Label>
               <Input
-                  id='form-text'
+                  className='form-text'
                   rows="10"
                   name="body"
                   placeholder="body"
@@ -105,8 +105,8 @@ export default class PostEdit extends Component {
                 />
           </FormGroup>
           <Button id="btn" onClick={this.handleSubmit}>
-            <GiSpellBook id="send" aria-hidden="true"/>
-            <GiSpellBook id="send2" aria-hidden="true"/>
+            <GiSpellBook className="send" aria-hidden="true"/>
+            <GiSpellBook className="send2" aria-hidden="true"/>
             <p>publish</p>
           </Button>
         </Form>
