@@ -59,6 +59,7 @@ Journaling alone can help you: manage anxiety, reduce stress, and cope with depr
 - "jest": "^28.1.2",
 - "react-test-renderer": "^18.2.0",
 - "webpack-dev-server": "^3"
+- "react-reveal": "^1.2.2"
 
 ### How to Deal with it
 - There a various way to identify and treat mental health symptoms that people may not know about. However, treatments vary depending on the severity
