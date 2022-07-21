@@ -66,7 +66,7 @@ class MyAccount extends Component {
     render() {
         console.log('display', this.state.isHidden)
         return (
-            <div className='account-container'>
+            <div id='account-container'>
                 <h3>My Account</h3>
 
                 <div id='account-group-1'>
@@ -86,7 +86,7 @@ class MyAccount extends Component {
                         {!this.state.loading &&
                         <div>
                             <CardBody id='cq-body'>
-                               <CardText id='cq-text' 
+                               <CardText 
                                className={this.state.isHidden ? 'cq-text': 'cq-text-display'}> 
                                     {`"${this.state.currentQuote.text}"`}
                                     <h4>{`-${this.state.currentQuote.author}`}</h4>

@@ -6,15 +6,15 @@ export default class Footer extends Component {
     return (
       <div id='footer'>
         <div id='footer-container'>
-        <p id='footer-text'>
+        <p className='footer-text'>
           <span>
-          <AiOutlineCopyrightCircle id='footer-icons'/>
+          <AiOutlineCopyrightCircle className='footer-icons'/>
           </span>
             Copyright JNID All rights reserved.
         </p>
-        <p id='footer-text'>
+        <p className='footer-text'>
           <a href='https://github.com/LEARN-JNID/BrightMind'target='_blank'>
-          <AiFillGithub id='footer-icons' />
+          <AiFillGithub className='footer-icons' />
           </a>
         </p>
         </div>
