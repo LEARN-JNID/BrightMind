@@ -60,10 +60,7 @@ render() {
           <BsCalendar className='show-icons'/>{` ${this.props.post.created_at.slice(0, 10)}`}</CardSubtitle>
           <CardSubtitle className='show-sub'>
           <BsClock className='show-icons'/>{` ${this.props.post.created_at.slice(11, 16)}`}</CardSubtitle>
-          <div id='mood-div-c'>
-            <CardSubtitle className='show-mood'>{this.props.post.mood}</CardSubtitle>
-            <GoPrimitiveDot className='show-mood'style={{color: this.props.post.color}}/>
-          </div>
+          <CardSubtitle className='show-mood'>{this.props.post.mood} <GoPrimitiveDot className='show-icons'style={{color: this.props.post.color}}/></CardSubtitle>
           <CardText className='show-text'>{this.props.post.body}</CardText>
           <Button className='show-buttons'>
             <NavLink className='navlink-show' to={'/postindex'}> Go Back </NavLink>

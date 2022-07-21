@@ -92,7 +92,6 @@ export default class Services extends Component {
                     </a>
                 </Card>
                 <Card className='services-c'>
- 
                     <CardTitle className='sc-title'>Healthunlocked</CardTitle>
                     <CardText>
                         Imagine a world where you can tap into the health
@@ -102,6 +101,66 @@ export default class Services extends Component {
                     </CardText>
                     <CardSubtitle className='sc-subtitle'>https://healthunlocked.com/</CardSubtitle>
                     <a href='https://healthunlocked.com/' target='_blank'>
+                        <Button className='button-serv'>Learn More</Button>
+                    </a>
+                </Card>
+                <Card className='services-c'>
+                    <CardTitle className='sc-title'>Greater Good</CardTitle>
+                    <CardText>
+                    Greater Good magazine is published by the Greater Good Science Center (GGSC) at the University of California, Berkeley. Since 2001, the GGSC has been at the fore of a new scientific movement to explore the roots of happy and compassionate individuals, strong social bonds, and altruistic behavior—the science of a meaningful life.
+                    </CardText>
+                    <CardSubtitle className='sc-subtitle'>https://greatergood.berkeley.edu/</CardSubtitle>
+                    <a href='https://greatergood.berkeley.edu/' target='_blank'>
+                        <Button className='button-serv'>Learn More</Button>
+                    </a>
+                </Card>
+                <Card className='services-c'>
+                    <CardTitle className='sc-title'>ADAA (Anxiety & Depression Association of America)</CardTitle>
+                    <CardText>
+                    ADAA is an international nonprofit organization dedicated to the prevention, treatment, and cure of anxiety, depression, OCD, PTSD, and co-occurring disorders through the alignment of science, treatment, and education.
+                    </CardText>
+                    <CardSubtitle className='sc-subtitle'>https://adaa.org/about-adaa</CardSubtitle>
+                    <a href='https://adaa.org/about-adaa' target='_blank'>
+                        <Button className='button-serv'>Learn More</Button>
+                    </a>
+                </Card>
+                <Card className='services-c'>
+                    <CardTitle className='sc-title'>WHO (World Health Organization)</CardTitle>
+                    <CardText>
+                    WHO is the United Nations agency that connects nations, partners and people to promote health, keep the world safe and serve the vulnerable – so everyone, everywhere can attain the highest level of health. 
+                    </CardText>
+                    <CardSubtitle className='sc-subtitle'>https://www.who.int/</CardSubtitle>
+                    <a href='https://www.who.int/' target='_blank'>
+                        <Button className='button-serv'>Learn More</Button>
+                    </a>
+                </Card>
+                <Card className='services-c'>
+                    <CardTitle className='sc-title'>URMC (University of Rochester Medical Center)</CardTitle>
+                    <CardText>
+                    The University of Rochester Medical Center (URMC) is one of the nation’s leading academic medical centers. It forms the centerpiece of the University of Rochester’s health research, teaching and patient care missions.
+                    </CardText>
+                    <CardSubtitle className='sc-subtitle'>https://www.urmc.rochester.edu/encyclopedia.aspx</CardSubtitle>
+                    <a href='https://www.urmc.rochester.edu/encyclopedia.aspx' target='_blank'>
+                        <Button className='button-serv'>Learn More</Button>
+                    </a>
+                </Card>
+                <Card className='services-c'>
+                    <CardTitle className='sc-title'>Everyday Health</CardTitle>
+                    <CardText>
+                    Do you sometimes worry so much that it interferes with your everyday activities? Or feel so blue that it completely clouds your outlook? Do you often experience these or similar feelings together? You’re not the only one.
+                    </CardText>
+                    <CardSubtitle className='sc-subtitle'>https://www.everydayhealth.com/anxiety/anxiety-and-depression.aspx</CardSubtitle>
+                    <a href='https://www.everydayhealth.com/anxiety/anxiety-and-depression.aspx' target='_blank'>
+                        <Button className='button-serv'>Learn More</Button>
+                    </a>
+                </Card>
+                <Card className='services-c'>
+                    <CardTitle className='sc-title'>American Psychological Association</CardTitle>
+                    <CardText>
+                    APA is the leading scientific and professional organization representing psychology in the United States, with more than 133,000 researchers, educators, clinicians, consultants, and students as its members.
+                    </CardText>
+                    <CardSubtitle className='sc-subtitle'>https://www.apa.org/</CardSubtitle>
+                    <a href='https://www.apa.org/' target='_blank'>
                         <Button className='button-serv'>Learn More</Button>
                     </a>
                 </Card>
@@ -116,7 +175,7 @@ export default class Services extends Component {
                         therapist search, providing a smooth and empowering
                         experience.
                     </CardText>
-                    <CardSubtitle>https://zencare.co/</CardSubtitle>
+                    <CardSubtitle className='sc-subtitle'>https://zencare.co/</CardSubtitle>
                     <a href='https://zencare.co/' target='_blank'>
                         <Button className='button-serv'>Learn More</Button>
                     </a>
