@@ -11,6 +11,7 @@ import {
     Button,
     CardFooter
   } from 'reactstrap';
+import Fade from 'react-reveal/Fade';
 
 class MyAccount extends Component {
     constructor(props){
@@ -72,9 +73,9 @@ class MyAccount extends Component {
                 <div id='account-group-1'>
                     <Card style={{ width: '30rem', height: '25rem'}}
                      className='project-card'>
-                    <NavLink to="/postindex">
-                        <CardTitle className='project-card-content'>View Your Journal <AiOutlineArrowRight/></ CardTitle> 
-                    </NavLink>
+                        <NavLink to="/postindex">
+                                <CardTitle className='project-card-content'>View Your Journal <AiOutlineArrowRight/></ CardTitle> 
+                        </NavLink>
                     </Card>
                     <Card 
                     id="quotes"
@@ -86,8 +87,8 @@ class MyAccount extends Component {
                         {!this.state.loading &&
                         <div>
                             <CardBody id='cq-body'>
-                               <CardText 
-                               className={this.state.isHidden ? 'cq-text': 'cq-text-display'}> 
+                            <CardText 
+                            className={this.state.isHidden ? 'cq-text': 'cq-text-display'}> 
                                     {`"${this.state.currentQuote.text}"`}
                                     <h4>{`-${this.state.currentQuote.author}`}</h4>
                                 </CardText>
@@ -102,7 +103,9 @@ class MyAccount extends Component {
                     <Card 
                     id='chart-card'
                     style={{ width: '78%', height: '78%'}}>
-                        <Chart moods={this.state.moods}/>
+                        <Fade bottom>
+                            <Chart moods={this.state.moods}/>
+                        </Fade>
                     </Card>
                 </div>
         );
