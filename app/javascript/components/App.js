@@ -14,6 +14,7 @@ import PostShow from './pages/PostShow'
 import PostEdit from './pages/PostEdit'
 import AboutUs from './pages/AboutUs'
 import Footer from './components/Footer'
+import NotFound from './pages/NotFound'
 
 
 
@@ -121,7 +122,10 @@ class App extends React.Component {
                 { return (<div>Waiting</div>)}
               }
               }}
-               />
+            />
+
+          <Route component={NotFound} />   
+       
         </Switch>
       <Footer />
     </Router>
