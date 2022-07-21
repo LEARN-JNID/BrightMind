@@ -72,7 +72,7 @@ export default class AboutUs extends Component {
           <CardBody>
             <CardTitle className='ab-card-t'>Davon Kennedy</CardTitle>
             <CardSubtitle className='ab-card-s'>Project Manager</CardSubtitle>
-            <CardText>My name is Davon Kennedy. I'm from Detroit MI, I'm a student at Learn Academy and i'm excited to hop into the tech industry and gain more experience as I go. I possess many skills as a developer such as critical thinking, problem solving, active listening, flexibility and optimism.My name is Davon Kennedy. I'm from Detroit MI, I'm a student at Learn Academy and i'm excited to hop into the tech industry and gain more experience as I go. I possess many skills as a developer such as critical thinking, problem solving, active listening, flexibility and optimism.
+            <CardText>My name is Davon Kennedy. I'm from Detroit MI, I'm a student at Learn Academy and i'm excited to hop into the tech industry and gain more experience as I go. I possess many skills as a developer such as critical thinking, problem solving, active listening, flexibility and optimism.
             <a id='ab-icons'
             href='https://github.com/DavonKenn'
             target='_blank'><AiFillGithub /></a>
