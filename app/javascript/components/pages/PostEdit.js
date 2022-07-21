@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { Redirect } from 'react-router-dom'
+import { Redirect, NavLink } from 'react-router-dom'
 import {GiSpellBook} from 'react-icons/gi'
 import {GoPrimitiveDot} from 'react-icons/go'
 import Fade from 'react-reveal/Fade'
@@ -86,7 +86,10 @@ export default class PostEdit extends Component {
           <FormGroup className='top-group'>
             <Fade right>
               <Label for="mood">Mood  <GoPrimitiveDot  style={{color: this.state.editedPost.color}}  className='post-icon'/></Label>
-                  <Input onChange={this.handleChange} type="select" name="mood" className="exampleSelect">
+                  <Input onChange={this.handleChange} type="select" name="mood" className="exampleSelect"
+                   value={this.state.editedPost.mood}>
+                 
+
                     <option>-</option>
                     <option>Happy</option>
                     <option>Good</option>
@@ -113,6 +116,9 @@ export default class PostEdit extends Component {
                 />
             </Fade>
           </FormGroup>
+          <Button className='show-buttons'>
+            <NavLink className='navlink-show' to={`/postshow/${this.props.post.id}`}> Go Back </NavLink>
+          </Button>
           <Button id="btn" onClick={this.handleSubmit}>
             <GiSpellBook className="send" aria-hidden="true"/>
             <GiSpellBook className="send2" aria-hidden="true"/>

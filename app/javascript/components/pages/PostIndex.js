@@ -68,7 +68,7 @@ export default class PostIndex extends Component {
               to={`/postshow/${currentPost.id}`}
               className='index-cards'>
                 <Card 
-                style={{ width: '20rem', height: '15rem'}} 
+                style={{ width: '20rem', height: '15rem'}}
                 key={index}>
                   <CardBody>
                     <CardTitle className='post-title'>{currentPost.title}</CardTitle>
