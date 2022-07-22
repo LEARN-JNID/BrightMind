@@ -1,10 +1,5 @@
 // Imports React into our test file.
 import React from 'react'
-import { 
-  cleanup, 
-  fireEvent, 
-  render 
-} from "@testing-library/react";
 // Imports Enzyme testing and deconstructs Shallow into our test file.
 import Enzyme, { shallow } from 'enzyme'
 
