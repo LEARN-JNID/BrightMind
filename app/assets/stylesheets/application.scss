@@ -139,6 +139,7 @@ body{
   margin: 100px auto;
   height: fit-content;
 }
+
 .demo-title{
   padding-bottom: 15px;
   font-size: 50px;
@@ -146,6 +147,7 @@ body{
   margin-bottom: 15px;
   letter-spacing: 2px;
   border-bottom: 4px solid #fc4a1a;
+  text-align: center
 }
 
 .demo-info{
@@ -157,8 +159,6 @@ body{
 }
 
 .img-demo{
-  width: 300px;
-  height: 300px;
   filter: drop-shadow(0 0.2rem 0.25rem black);
   }
 
