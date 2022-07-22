@@ -83,6 +83,32 @@ body{
 
 //  Home ---------
 
+.mission{
+  text-align: center;
+  margin: 15px 0;
+  justify-content: center;
+}
+
+.mission-title{
+    padding-bottom: 5px;
+    font-size: 50px;
+    letter-spacing: 2px;
+    border-bottom: 4px solid #fc4a1a;
+    width: fit-content;
+    margin: 0 auto;
+    display: block;
+  }
+
+.mission-body{
+  letter-spacing: 1px;
+  font-size: 18px;
+  margin-bottom: 45px;
+  padding-top: 10px;
+  margin: 0 auto;
+  width: 1111px;
+  display: block;
+}
+
 #intro-text{
   background: #4abdac;
   top: 0;

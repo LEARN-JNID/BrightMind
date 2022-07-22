@@ -15,8 +15,10 @@ export default class Home extends Component {
             </Fade>
           </div>
         <div id='home-body-c'>
-          <h2>Misson Statement</h2> 
-          <p>The statistics from the World Health Organization (WHO) states that approximately 280 million people in the world have depression and 301 million suffer from stress and anxiety. Many of us have experienced these things without a positive outlet. High amounts of stress and anxiety that is left untreated can disrupt connection within the body and mind, which may lead to many other health conditions. Unfortunately, some people never overcome these conditions because they lack the tools and resources due to intimidation, cost of care, or lack of guidance. As people that have endured these mental health issues, we would like to help.</p> 
+          <div className='mission'>
+            <h2 className='mission-title'>Misson Statement</h2> 
+            <p className='mission-body'>The statistics from the World Health Organization (WHO) states that approximately 280 million people in the world have depression and 301 million suffer from stress and anxiety. Many of us have experienced these things without a positive outlet. High amounts of stress and anxiety that is left untreated can disrupt connection within the body and mind, which may lead to many other health conditions. Unfortunately, some people never overcome these conditions because they lack the tools and resources due to intimidation, cost of care, or lack of guidance. As people that have endured these mental health issues, we would like to help.</p> 
+          </div>
           <div className='body-demo'>
             <Fade bottom>
               <div className='demo-info'>
@@ -31,7 +33,7 @@ export default class Home extends Component {
               <img className='img-demo' src={NewGif} alt="gif demo"/>
               <div className='demo-info'>
                 <h2 className='demo-title'>Write</h2>
-                <p>Learn from the past and continue moving forward. Everyday is a new day for growth and new experiences. Be kind to yourself as you recognize thoughts, feelings, and actions. They do not define you.</p>
+                <p>Learn from the past and continue moving forward. Every day is a new day for growth and new experiences. Be kind to yourself as you recognize thoughts, feelings, and actions. They do not define you.</p>
               </div>
             </div>
           </Fade>
