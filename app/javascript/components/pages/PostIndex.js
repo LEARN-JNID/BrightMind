@@ -21,7 +21,10 @@ export default class PostIndex extends Component {
 
   componentDidUpdate(prevProps){
     if(this.props.posts !== prevProps.posts){
-      this.setState({posts: this.props.posts})
+      let sortedPosts = this.props.posts.sort(function (a, b) {
+        return Date.parse(b.created_at) - Date.parse(a.created_at)
+      }) 
+      this.setState({posts: sortedPosts})
     }
   }
 
@@ -33,12 +36,6 @@ export default class PostIndex extends Component {
         return post.mood === e.target.value
       })
       this.setState({posts: filteredPosts})
-    } else {
-      // Dates
-      // iterate
-      // look at dates
-      // convert dates
-      // compare dates
     }
   }
 
