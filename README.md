@@ -3,7 +3,7 @@
 [BrightMind Live Link](https://calm-plateau-12315.herokuapp.com/)
 
 ## Overview
-- The statistics from the World Health Organization (WHO) states that 3.8% of the population or 280 million people in the world have depression and 301 million suffering with an anxiety disorder.
+- The statistics from the World Health Organization (WHO) states that approximately 280 million people in the world have depression and 301 million suffer from anxiety.
 - 'BrightMind' is a mental wellness web application that provides users a private journaling experience. Numerous studies have shown that journaling can reduce overall levels of depression and anxiety.  By keeping a journal, people are able to take the weight off their shoulders, fully express themselves, and identify the root of their problems. To creating order when your world feels like chaos.
 Journaling alone can help you: manage anxiety, reduce stress, and cope with depression. As people that have endured these mental health issues, we want to help.
 - This app was created for LEARN Academy Charlie Cohort 2022.
@@ -60,11 +60,6 @@ Journaling alone can help you: manage anxiety, reduce stress, and cope with depr
 - "react-test-renderer": "^18.2.0",
 - "webpack-dev-server": "^3"
 - "react-reveal": "^1.2.2"
-
-### How to Deal with it
-- There a various way to identify and treat mental health symptoms that people may not know about. However, treatments vary depending on the severity
-
-- We want to be a part of the solution by giving our users the ability to reduce their stressors by putting thoughts on to paper so that they do not have to worry about it anymore. By journaling and promoting links to help.
 
 ## Architecture
 

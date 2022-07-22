@@ -83,6 +83,32 @@ body{
 
 //  Home ---------
 
+.mission{
+  text-align: center;
+  margin: 15px 0;
+  justify-content: center;
+}
+
+.mission-title{
+    padding-bottom: 5px;
+    font-size: 50px;
+    letter-spacing: 2px;
+    border-bottom: 4px solid #fc4a1a;
+    width: fit-content;
+    margin: 0 auto;
+    display: block;
+  }
+
+.mission-body{
+  letter-spacing: 1px;
+  font-size: 18px;
+  margin-bottom: 45px;
+  padding-top: 10px;
+  margin: 0 auto;
+  width: 1111px;
+  display: block;
+}
+
 #intro-text{
   background: #4abdac;
   top: 0;
@@ -139,6 +165,7 @@ body{
   margin: 100px auto;
   height: fit-content;
 }
+
 .demo-title{
   padding-bottom: 15px;
   font-size: 50px;
@@ -146,6 +173,7 @@ body{
   margin-bottom: 15px;
   letter-spacing: 2px;
   border-bottom: 4px solid #fc4a1a;
+  text-align: center
 }
 
 .demo-info{
@@ -157,8 +185,6 @@ body{
 }
 
 .img-demo{
-  width: 300px;
-  height: 300px;
   filter: drop-shadow(0 0.2rem 0.25rem black);
   }
 

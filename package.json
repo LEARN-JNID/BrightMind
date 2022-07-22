@@ -22,5 +22,12 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "identity-obj-proxy": "^3.0.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    }
+  } 
 }
