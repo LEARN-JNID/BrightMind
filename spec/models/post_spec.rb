@@ -1,6 +1,9 @@
+
 require 'rails_helper'
 
+
 RSpec.describe Post, type: :model do
+  it { should belong_to(:user) }
   it 'has a title' do
 
     post = Post.create mood:'soemthigdn', body:'sjofjdof', color:"string" 

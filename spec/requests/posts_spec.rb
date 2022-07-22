@@ -82,6 +82,45 @@ RSpec.describe "/posts", type: :request do
         expect(response).to be_successful
       end
     end
+
+      it "creates a new apartment and adds it to the database" do
+        user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+  
+        post_params = {
+          post: {
+          title: 'string',
+          mood: 'string',
+          body: 'string',
+          color: '92019'
+        }
+         }
+  
+        post `/postsnew/#{user.id}`, params: post_params
+        
+        post = user.posts.first
+        expect(response).to have_http_status(200)
+        expect(post.title).to eq 'string'
+        expect(post.mood).to eq 'string'
+        expect(post.body).to eq 'string'
+        expect(post.color).to eq '92019'
+      end
+      it "does not create new post without a title " do
+        user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+  
+        post_params = {
+          post: {
+          mood: 'string',
+          body: 'string',
+          color: '92019'
+        }
+         }
+  
+        post `/postsnew/#{user.id}`, params: post_params
+        
+        post = JSON.parse(response.body)
+        expect(response).to have_http_status(422)
+        expect(post['title']).to include "can't be blank"
+      end
   end
 
   describe "PATCH /update" do
@@ -127,5 +166,25 @@ RSpec.describe "/posts", type: :request do
       delete post_url(post)
       expect(response).to redirect_to(posts_url)
     end
+  end
+  describe "Delete /post/:id" do
+    it "removes an post from the database" do
+      post_params = {
+        post: {
+          title: 'stirng',
+          mood: 'string',
+          body: 'string',
+          color: '92019'
+        }
+      }
+      post '/posts', params: post_params
+
+      post = Post.first
+      post_id = post.id
+      delete "/posts/#{post_id}"
+
+      expect(response).to have_http_status(200)
+      expect(Post.all.length).to eq 0
+    end   
   end
 end
