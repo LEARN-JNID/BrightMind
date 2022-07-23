@@ -11,18 +11,12 @@ class PostsController < ApplicationController
     render json: post
   end
 
-  def new
-  end
-
-  def edit
-  end
-
   def create
     post = current_user.posts.create(post_params)
     if post.valid?
       render json: post
     else
-      render json: user.errors, status: 422
+      render json: post.errors, status: 422
     end
   end
 
