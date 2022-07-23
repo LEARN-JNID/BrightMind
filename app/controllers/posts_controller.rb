@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     if post.valid?
       render json: post
     else
-      render json: user.errors, status: 422
+      render json: post.errors, status: 422
     end
   end
 

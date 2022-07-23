@@ -27,7 +27,15 @@ RSpec.describe "/posts", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      Post.create! valid_attributes
+        user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+        sign_in user
+        post = {
+          title: 'string',
+          mood: 'string',
+          body: 'string',
+          color: '92019'
+        }
+      Post.create(post)
       get posts_url
       expect(response).to be_successful
     end
@@ -35,156 +43,134 @@ RSpec.describe "/posts", type: :request do
 
   describe "GET /show" do
     it "renders a successful response" do
-      post = Post.create! valid_attributes
-      get post_url(post)
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET /new" do
-    it "renders a successful response" do
-      get new_post_url
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET /edit" do
-    it "renders a successful response" do
-      post = Post.create! valid_attributes
-      get edit_post_url(post)
-      expect(response).to be_successful
-    end
-  end
-
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new Post" do
-        expect {
-          post posts_url, params: { post: valid_attributes }
-        }.to change(Post, :count).by(1)
-      end
-
-      it "redirects to the created post" do
-        post posts_url, params: { post: valid_attributes }
-        expect(response).to redirect_to(post_url(Post.last))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "does not create a new Post" do
-        expect {
-          post posts_url, params: { post: invalid_attributes }
-        }.to change(Post, :count).by(0)
-      end
-
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post posts_url, params: { post: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-
-      it "creates a new apartment and adds it to the database" do
-        user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
-  
-        post_params = {
-          post: {
+      user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+      sign_in user
+      post_params = {
+        post: {
           title: 'string',
           mood: 'string',
           body: 'string',
-          color: '92019'
+          color: 'string'
         }
-         }
-  
-        post `/postsnew/#{user.id}`, params: post_params
-        
-        post = user.posts.first
-        expect(response).to have_http_status(200)
-        expect(post.title).to eq 'string'
-        expect(post.mood).to eq 'string'
-        expect(post.body).to eq 'string'
-        expect(post.color).to eq '92019'
-      end
-      it "does not create new post without a title " do
-        user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
-  
-        post_params = {
-          post: {
-          mood: 'string',
-          body: 'string',
-          color: '92019'
-        }
-         }
-  
-        post `/postsnew/#{user.id}`, params: post_params
-        
-        post = JSON.parse(response.body)
-        expect(response).to have_http_status(422)
-        expect(post['title']).to include "can't be blank"
-      end
-  end
-
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
       }
+      
+      post '/posts', params: post_params
+      post = Post.first
+      post_id = post.id
+      get "/cats/#{post_id}"
 
-      it "updates the requested post" do
-        post = Post.create! valid_attributes
-        patch post_url(post), params: { post: new_attributes }
-        post.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "redirects to the post" do
-        post = Post.create! valid_attributes
-        patch post_url(post), params: { post: new_attributes }
-        post.reload
-        expect(response).to redirect_to(post_url(post))
-      end
-    end
-
-    context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        post = Post.create! valid_attributes
-        patch post_url(post), params: { post: invalid_attributes }
-        expect(response).to be_successful
-      end
+      show_post = Post.first
+      expect(response).to be_successful
+      expect(show_post.title).to eq 'string'
+      expect(show_post.mood).to eq 'string'
+      expect(show_post.body).to eq 'string'
+      expect(show_post.color).to eq 'string'
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested post" do
-      post = Post.create! valid_attributes
-      expect {
-        delete post_url(post)
-      }.to change(Post, :count).by(-1)
-    end
-
-    it "redirects to the posts list" do
-      post = Post.create! valid_attributes
-      delete post_url(post)
-      expect(response).to redirect_to(posts_url)
-    end
-  end
-  describe "Delete /post/:id" do
-    it "removes an post from the database" do
+  describe "POST /posts" do
+    it "renders a successful response" do
+      user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+      sign_in user
       post_params = {
         post: {
-          title: 'stirng',
+          title: 'string',
           mood: 'string',
           body: 'string',
-          color: '92019'
+          color: 'string'
         }
       }
+      
       post '/posts', params: post_params
+      posts = Post.all
+
+      expect(response).to be_successful
+      expect(posts.length).to eq 1
+    end
+
+    it "doest not create a post without a title; renders a error response" do
+      user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+      sign_in user
+      post_params = {
+        post: {
+          mood: 'string',
+          body: 'string',
+          color: 'string'
+        }
+      }
+      
+      post '/posts', params: post_params
+      post = JSON.parse(response.body)
+      expect(response).to have_http_status(422)
+      expect(post['title']).to include "can't be blank"
+    end
+  end
+
+  describe "PATCH /posts/:id" do
+    it "updates an existing post within the database" do
+      user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+      sign_in user
+      post_params = {
+        post: {
+          title: 'string',
+          mood: 'string',
+          body: 'string',
+          color: 'string'
+        }
+      }
+      
+      post '/posts', params: post_params
+
+      edit_params = {
+        post: {
+          title: 'test',
+          mood: 'string',
+          body: 'string',
+          color: 'string'
+        }
+      }
+
+      post = Post.first
+      post_id = post.id
+      patch "/posts/#{post_id}", params: edit_params
+
+      edited_post = Post.first
+
+      expect(response).to be_successful
+      expect(edited_post.title).to eq 'test'
+    end
+  end
+
+  describe "DELETE /posts/:id" do
+    it "removes a post from the database" do
+      user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+      sign_in user
+      post_params = {
+        post: {
+          title: 'string',
+          mood: 'string',
+          body: 'string',
+          color: 'string'
+        }
+      }
+      
+      post '/posts', params: post_params
+
+      edit_params = {
+        post: {
+          title: 'test',
+          mood: 'string',
+          body: 'string',
+          color: 'string'
+        }
+      }
 
       post = Post.first
       post_id = post.id
       delete "/posts/#{post_id}"
 
-      expect(response).to have_http_status(200)
+      expect(response).to be_successful
       expect(Post.all.length).to eq 0
-    end   
+    end
   end
 end
