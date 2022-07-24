@@ -61,7 +61,7 @@ export default class PostEdit extends Component {
 
       <div id='form-container'>
         <Fade>
-          <h3 id='form-title'>Edit Entry</h3>
+          <h3 id='form-title' className='title'>Edit Entry</h3>
           </Fade>
         <Form id='form-body'>
         <div id='top-group-c'>

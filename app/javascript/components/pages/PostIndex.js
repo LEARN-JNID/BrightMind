@@ -46,7 +46,7 @@ export default class PostIndex extends Component {
     return (
       <>
       <div id='index-page'>
-        <h3>My Journal's</h3>
+        <h3 className='title'>My Entries</h3>
         <select onChange={this.filterChoice} id='select'>
           <option value="All">All</option>
           <option value="Happy">Happy</option>
@@ -54,7 +54,6 @@ export default class PostIndex extends Component {
           <option value="Okay">Okay</option>
           <option value="Sad">Sad</option>
           <option value="Miserable">Miserable</option>
-          <option value="Date">Date Time</option>
         </select>
         <div id='index-container'>
           {posts &&
@@ -65,7 +64,7 @@ export default class PostIndex extends Component {
               to={`/postshow/${currentPost.id}`}
               className='index-cards'>
                 <Card 
-                style={{ width: '20rem', height: '15rem'}}
+                style={{ width: '20rem', height: '18rem'}}
                 key={index}>
                   <CardBody>
                     <CardTitle className='post-title'>{currentPost.title}</CardTitle>

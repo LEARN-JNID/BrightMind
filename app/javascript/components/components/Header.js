@@ -41,7 +41,7 @@ handleClick = () => {
          className={this.state.collapsed ? 'nav-color' : 'navbar-container active'}
         >
           <NavbarBrand href="/" className="mr-auto" >
-            {/* <h3 id='bm-title'>Bright Mind</h3> */}
+            <h3 id='bm-title'>Bright Mind</h3>
             </NavbarBrand>
           <div className="mr-2" onClick={this.toggleNavbar}>
           {this.state.collapsed ? <GiHamburgerMenu className='icons'/> : <AiOutlineCloseCircle className='icons'/>}

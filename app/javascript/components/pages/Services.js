@@ -12,8 +12,43 @@ export default class Services extends Component {
     render() {
         return (
             <div id='services-container'>
-                <h1>Services</h1>
-                
+                <h1 className='title'>Services</h1>
+                <Fade bottom>
+                    <Card className='services-c'>
+                        <CardTitle className='sc-title'>Mind & Body</CardTitle>
+                        <CardText>
+                            Stressed and isolated? Try expressing your thoughts and feelings in writing.
+                        </CardText>
+                        <CardSubtitle className='sc-subtitle'>https://greatergood.berkeley.edu/article/item/how_journaling_can_help_you_in_hard_times</CardSubtitle>
+                        <a href='https://greatergood.berkeley.edu/article/item/how_journaling_can_help_you_in_hard_times' target='_blank'>
+                            <Button className='button-serv'>Learn More</Button>
+                        </a>
+                    </Card>
+                </Fade>
+                <Fade bottom>
+                    <Card className='services-c'>
+                        <CardTitle className='sc-title'>Anxiety & Depression Association of America</CardTitle>
+                        <CardText>
+                        Anxiety is as common among older adults as among the young. Generalized anxiety disorder (GAD) is the most common anxiety disorder among older adults, though anxiety disorders in this population are frequently associated with traumatic events such as a fall or acute illness. Read the best way to treat anxiety disorders in older adults.
+                        </CardText>
+                        <CardSubtitle className='sc-subtitle'>https://adaa.org/understanding-anxiety/facts-statistics</CardSubtitle>
+                        <a href='https://adaa.org/understanding-anxiety/facts-statistics' target='_blank'>
+                            <Button className='button-serv'>Learn More</Button>
+                        </a>
+                    </Card>
+                </Fade>
+                <Fade bottom>
+                    <Card className='services-c'>
+                        <CardTitle className='sc-title'>Web MD</CardTitle>
+                        <CardText>
+                            It’s common for people to have other medical or mental health problems along with depression, such as anxiety, obsessive compulsive disorder, panic disorder, phobias, substance use disorders, and eating disorders. If you or a loved one has symptoms of depression or another mental illness, talk to your doctor. Treatments can help.
+                        </CardText>
+                        <CardSubtitle className='sc-subtitle'>https://www.webmd.com/depression/guide/what-is-depression</CardSubtitle>
+                        <a href='https://www.webmd.com/depression/guide/what-is-depression' target='_blank'>
+                            <Button className='button-serv'>Learn More</Button>
+                        </a>
+                    </Card>
+                </Fade>
                 <Fade bottom>
                     <Card className='services-c'>
                         <CardTitle className='sc-title'>The Tribe</CardTitle>

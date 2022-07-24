@@ -54,7 +54,6 @@ class MyAccount extends Component {
             })
             this.setState({ quotes: happyQuotes, loading: false })})
           .catch(errors => console.log(errors))
-
       }
 
       randomQuote = () => {
@@ -68,7 +67,7 @@ class MyAccount extends Component {
         console.log('display', this.state.isHidden)
         return (
             <div id='account-container'>
-                <h3>My Account</h3>
+                <h3 className='title'>My Account</h3>
 
                 <div id='account-group-1'>
                     <Card style={{ width: '30rem', height: '25rem'}}
