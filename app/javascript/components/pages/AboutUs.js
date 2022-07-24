@@ -8,12 +8,13 @@ import {
   CardBody,
   CardTitle
 } from 'reactstrap';
+import Ivan from '../../../assets/images/Ivan.png'
 
 export default class AboutUs extends Component {
   render() {
     return (
       <div id='abus-container'>
-        <h3>About Us</h3>
+        <h3 className='title'>About Us</h3>
         <div className='cards-container'>
           <Card className='ab-cards'
           style={{ width: '30rem' }}>
@@ -34,7 +35,7 @@ export default class AboutUs extends Component {
 
           <Card className='ab-cards' 
           style={{ width: '30rem' }}>
-            <CardImg className='ab-card-img' src={'https://mail.google.com/mail/u/0?ui=2&ik=ca153d4ae4&attid=0.1&permmsgid=msg-f:1738709250007429633&th=182122d9ce60f201&view=att&disp=safe'} />
+            <CardImg className='ab-card-img' src={Ivan} />
             <CardBody>
               <CardTitle className='ab-card-t'>Ivan Ortega</CardTitle>
               <CardSubtitle className='ab-card-s'>Tech Lead</CardSubtitle>

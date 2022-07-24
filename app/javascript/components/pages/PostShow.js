@@ -46,7 +46,7 @@ render() {
       <Modal isOpen={this.state.modal} toggle={this.toggle}>
         <ModalHeader toggle={this.toggle}>Are you sure you want to delete this journal?</ModalHeader>
         <ModalFooter>
-          <Button id='s-d-button' onClick={this.handleDelete}>Forget Journal</Button>{' '}
+          <Button id='s-d-button' onClick={this.handleDelete}>Forget</Button>{' '}
           <Button id='s-c-button' onClick={this.toggle}>Cancel</Button>
         </ModalFooter>
     </Modal>
@@ -57,7 +57,7 @@ render() {
       style={{ width: '100%', height: 'fit-content'}}>
         <CardBody>
           <Zoom>
-            <CardTitle id='show-title'>{this.props.post.title}</CardTitle>
+            <CardTitle className='title' id='show-title'>{this.props.post.title}</CardTitle>
           </Zoom>
           <CardSubtitle className='show-sub'>
           <BsCalendar className='show-icons'/>{` ${this.props.post.created_at.slice(0, 10)}`}</CardSubtitle>
